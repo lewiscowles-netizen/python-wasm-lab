@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "runtimes": [
+    {
+      "id": "pyodide-314.0.7",
+      "label": "Pyodide 314.0.7 \u00b7 CDN",
+      "adapter": "pyodide",
+      "module": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs",
+      "description": "Upstream Pyodide 314.0.7, loaded on Run from jsDelivr. Package options may also contact PyPI and package hosts. This is an upstream comparison runtime, separate from the local CPython builds.",
+      "capabilities": {
+        "stdlib": "Pyodide standard library",
+        "sqlite3": "Bundled; query verified (SQLite 3.39.0)",
+        "pip": false,
+        "micropip": "Optional; off by default",
+        "nativeWheels": "Matching Pyodide wheels only",
+        "network": "Browser fetch / CORS",
+        "filesystem": "Ephemeral virtual filesystem"
+      }
+    }
+  ]
+}

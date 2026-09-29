@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Run and compare independently built Python WebAssembly interpreters in your browser.">
+  <title>Python in WebAssembly — Lewis Cowles</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <a href="../../../README.md">Lab README</a>
+      <p class="eyebrow">A runtime laboratory</p>
+      <h1>Python, across versions.</h1>
+      <p class="intro">Compare Python 2.7 and every Python 3 minor through 3.15 in your browser. Choose a version, inspect its capabilities, and see the version reported by Python itself. Pyodide is available separately for package and browser API experiments.</p>
+      <p><a href="./LAB-NOTES.md">Guided experiments and verified results</a></p>
+    </header>
+
+    <section class="panel" aria-labelledby="runtime-heading">
+      <div class="section-heading">
+        <h2 id="runtime-heading">1. Choose a runtime</h2>
+        <span id="runtime-count" class="badge">Loading catalog</span>
+      </div>
+      <div class="controls">
+        <div class="field grow">
+          <label for="runtime">Python build</label>
+          <select id="runtime" disabled><option>Loading runtimes…</option></select>
+        </div>
+        <div class="field">
+          <label for="timeout">Time limit</label>
+          <select id="timeout">
+            <option value="10">10 seconds</option>
+            <option value="30" selected>30 seconds</option>
+            <option value="120">2 minutes</option>
+          </select>
+        </div>
+      </div>
+      <p id="runtime-description" class="muted">Only published builds appear in this catalog.</p>
+      <dl id="capabilities" class="capabilities"></dl>
+      <p id="manifest-note" class="muted small"></p>
+      <fieldset id="package-controls" disabled>
+        <legend>Optional Pyodide packages</legend>
+        <label class="checkbox-label"><input id="auto-packages" type="checkbox"> Load known Pyodide packages named in imports</label>
+        <label class="checkbox-label"><input id="enable-micropip" type="checkbox"> Enable micropip for this run</label>
+        <div class="field">
+          <label for="packages">Install packages before running (one requirement per line)</label>
+          <textarea id="packages" disabled spellcheck="false" rows="2" placeholder="snowballstemmer==3.0.1"></textarea>
+        </div>
+        <p id="package-note" class="muted small">Package installation is unavailable for bare CPython builds.</p>
+      </fieldset>
+    </section>
+
+    <section class="panel" aria-labelledby="code-heading">
+      <div class="section-heading">
+        <h2 id="code-heading">2. Try some code</h2>
+        <div class="field example-field">
+          <label for="example">Example</label>
+          <select id="example">
+            <option value="hello">Version and arithmetic</option>
+            <option value="info">Python info</option>
+            <option value="stdlib">Standard library probe</option>
+            <option value="sqlite">SQLite application query</option>
+            <option value="syntax">Language differences</option>
+            <option value="files">Ephemeral files</option>
+            <option value="packages">Pure Python wheel · Pyodide</option>
+            <option value="arrays">Compiled NumPy package · Pyodide</option>
+            <option value="browser">Browser API and fetch · Pyodide</option>
+            <option value="datasette">Datasette application · Pyodide</option>
+            <option value="errors">Errors and separate output streams</option>
+            <option value="loop">Stop an infinite loop</option>
+          </select>
+        </div>
+      </div>
+      <p id="example-note" class="muted small"></p>
+      <label for="code" class="visually-hidden">Python source code</label>
+      <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" rows="14" aria-describedby="execution-note"></textarea>
+      <div class="controls actions">
+        <button id="run" type="button" disabled>Run Python</button>
+        <button id="stop" type="button" disabled>Stop</button>
+        <span id="status" role="status" aria-live="polite">Loading runtime catalog…</span>
+      </div>
+      <p id="execution-note" class="muted small">Each run starts a fresh interpreter in a worker. Files and variables disappear after the run. The time limit includes downloading and starting Python. Standard input ends immediately. Ctrl/⌘ + Enter runs the example.</p>
+    </section>
+
+    <section class="panel output-panel" aria-labelledby="output-heading">
+      <div class="section-heading">
+        <h2 id="output-heading">3. Inspect the result</h2>
+        <span id="elapsed" class="badge">Not run yet</span>
+      </div>
+      <p id="reported-version" class="version">Python has not reported a version yet.</p>
+      <h3>Standard output</h3>
+      <pre id="stdout" tabindex="0" aria-label="Standard output"></pre>
+      <h3>Standard error</h3>
+      <pre id="stderr" tabindex="0" aria-label="Standard error"></pre>
+    </section>
+
+    <footer>
+      <p>This experiment distinguishes the interpreter, standard library, package installer, and browser integration. A working Python interpreter does not imply working pip, native wheels, sockets, or subprocesses.</p>
+      <p><a href="./README.md">Artifact contract and running locally</a> · <a href="https://github.com/Lewiscowles1986/php-wasm-builder">PHP builder inspiration</a> · <a href="https://pyodide.org/">Pyodide</a></p>
+    </footer>
+  </main>
+  <script type="module" src="./playground.mjs"></script>
+</body>
+</html>
