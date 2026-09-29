@@ -26,6 +26,8 @@ Use one of your projects to produce a small, reviewable deployment: a pinned run
 
 Keep unsupported capabilities explicit. The current lab is a script runner; the proposed navigable framework host is additional engineering. Finishing these stages establishes practical Python/Wasm integration skills, not proof that every package or operating-system feature works.
 
+For the next stage, follow the [edge and WASI study map](edge.md): package applications, compare host contracts and investigate isolation through local experiments and primary research.
+
 ## Beyond this lab
 
 For compiler and runtime depth, continue with the [WebAssembly core specification](https://webassembly.github.io/spec/core/), [Emscripten porting guide](https://emscripten.org/docs/porting/), and [Pyodide package-building guide](https://pyodide.org/en/stable/development/building-packages.html). Focus on imports/exports, linear memory, application binary interfaces, filesystem integration and host calls before attempting a new native extension. The [build trade-offs](explanation/build-tradeoffs.md) connect those topics to the historical Python ports here.
