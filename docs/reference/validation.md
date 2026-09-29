@@ -16,6 +16,8 @@ The standalone full run uses Playwright 1.62.1 with Chromium and takes 52.5 seco
 
 Separate [network checks](network-dependencies.md#recorded-checks) record the scope and limits of execution with external HTTP requests blocked.
 
+The [framework probes](framework-support.md) separately record in-process requests, application lifecycle checks and observed compatibility failures.
+
 ## History cleanup
 
 The [2026-09-29 cleanup record](../evidence/history-cleanup-2026-09-29.json) maps original commits to their rewritten equivalents after removing the downloaded and generated material identified in the [provenance appendix](../../appendix.md). The original browser report retains its original commit identity. Its application source and runtime hashes still match after cleanup; this verification does not represent a new browser test run. The cleanup record also identifies the unchanged tip tree and checks that local files and dependency checkout heads were preserved.
