@@ -16,6 +16,7 @@ A browser playground for comparing CPython releases and Pyodide, with editable e
 | Bring your own project | [Project integration guide](docs/how-to/import-project.md) |
 | Run Django, Flask or FastAPI requests | [Framework probes](docs/how-to/probe-frameworks.md) and [browser-playground design](docs/explanation/framework-playgrounds.md) |
 | Call a real external service | [Service tutorial](docs/tutorials/external-service.md) and [intranet connection guide](docs/how-to/connect-service.md) |
+| Package Python for edge runtimes and study isolation | [Edge and WASI study map](docs/edge.md) |
 | Run inside a closed network | [Internal deployment](docs/how-to/deploy-offline.md) and [intranet debugging](docs/how-to/debug-intranet.md) |
 | Rebuild, verify or deploy | [Documentation index](docs/README.md) |
 | Assess what has actually passed | [Validation reference](docs/reference/validation.md) |
