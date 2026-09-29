@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-29",
+  "sourceCommit": "ad4bd35f5b17e38beb7f98db95f79f5d9f7faf45",
+  "worker": {
+    "path": "experiments/wasm/python/worker.mjs",
+    "sha256": "4bed887bac7dac75dce35ee5d428e0bbcfea44d604b6be196e46b0f8786652f5"
+  },
+  "runtime": {
+    "distribution": "Pyodide 314.0.7",
+    "cpython": "3.14.2",
+    "lockURL": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide-lock.json",
+    "lockSha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010"
+  },
+  "browser": "Chromium 151.0.7922.34",
+  "playwrightVersion": "1.62.1",
+  "frameworks": [
+    {
+      "name": "flask",
+      "source": "docs/examples/framework-flask.py",
+      "sourceSha256": "70faac7ad15d930ebd1b70fb41ebdd956dad5803056a4f6c7c54c5ec17a98c2a",
+      "requirements": "docs/examples/framework-flask-requirements.txt",
+      "requirementsSha256": "5d1c2b65a85c2ed3f4e68685a40e59217cdbd5222bffcf156b207b1d9cf256b4",
+      "workerOptions": {
+        "autoPackages": false,
+        "micropip": true,
+        "packages": [
+          "MarkupSafe==3.0.3",
+          "Jinja2==3.1.6",
+          "itsdangerous==2.2.0",
+          "click==8.5.0",
+          "blinker==1.9.0",
+          "Werkzeug==3.1.9",
+          "Flask==3.1.3"
+        ]
+      },
+      "reportedVersion": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8 \u00b7 emscripten",
+      "packages": {
+        "Flask": "3.1.3",
+        "Jinja2": "3.1.6",
+        "MarkupSafe": "3.0.3",
+        "Werkzeug": "3.1.9",
+        "blinker": "1.9.0",
+        "click": "8.5.0",
+        "itsdangerous": "2.2.0",
+        "micropip": "0.11.1"
+      },
+      "status": "Finished with exit code 0.",
+      "responses": [
+        {
+          "case": "GET",
+          "json": {
+            "message": "hello from Flask",
+            "method": "GET"
+          },
+          "set_cookie": [],
+          "status": 200
+        },
+        {
+          "case": "POST",
+          "json": {
+            "body": {
+              "hello": "wasm"
+            },
+            "method": "POST"
+          },
+          "set_cookie": [],
+          "status": 200
+        },
+        {
+          "case": "404",
+          "json": null,
+          "set_cookie": [],
+          "status": 404
+        },
+        {
+          "case": "COOKIE_SET",
+          "json": {
+            "saved": true
+          },
+          "set_cookie": [
+            "session=eyJjb3VudGVyIjo0Mn0.arvflw.a28iQvB6RTa3EF_4loTt6WQxShc; HttpOnly; Path=/"
+          ],
+          "status": 200
+        },
+        {
+          "case": "COOKIE_READ",
+          "json": {
+            "counter": 42
+          },
+          "set_cookie": [],
+          "status": 200
+        },
+        {
+          "case": "SQLITE",
+          "json": {
+            "rows": [
+              "SQLite in Flask"
+            ]
+          },
+          "set_cookie": [],
+          "status": 200
+        }
+      ],
+      "observations": {
+        "SQLITE_VERSION": "3.39.0"
+      },
+      "stderr": "",
+      "network": "Runtime and dependency downloads used jsDelivr and PyPI; no offline claim. Framework requests used an in-process client.",
+      "wheelDownloads": [
+        {
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/micropip-0.11.1-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/markupsafe-3.0.3-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+          "status": 200
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/jinja2-3.1.6-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/04/96/92447566d16df59b2a776c0fb82dbc4d9e07cd95062562af01e408583fc4/itsdangerous-2.2.0-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/10/cb/f2ad4230dc2eb1a74edf38f1a38b9b52277f75bef262d8908e60d957e13c/blinker-1.9.0-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/a1/38/df03f564f43cec2684823f3cccae1a652ee7face1cbaa76fb223096e64d7/werkzeug-3.1.9-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/7f/9c/34f6962f9b9e9c71f6e5ed806e0d0ff03c9d1b0b2340088a0cf4bce09b18/flask-3.1.3-py3-none-any.whl",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "django",
+      "source": "docs/examples/framework-django.py",
+      "sourceSha256": "8524795cf3987f75813d6db4264178b2ef51311d3927f44b39a945e25948c2f1",
+      "requirements": "docs/examples/framework-django-requirements.txt",
+      "requirementsSha256": "16094c3b70ff6493ce7631533ad74e75747b32889d911a2803d1499954b758f1",
+      "workerOptions": {
+        "autoPackages": false,
+        "micropip": true,
+        "packages": [
+          "asgiref==3.12.1",
+          "sqlparse==0.6.0",
+          "Django==6.1.1"
+        ]
+      },
+      "reportedVersion": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8 \u00b7 emscripten",
+      "packages": {
+        "Django": "6.1.1",
+        "asgiref": "3.12.1",
+        "micropip": "0.11.1",
+        "sqlparse": "0.6.0"
+      },
+      "status": "Finished with exit code 0.",
+      "responses": [
+        {
+          "case": "GET",
+          "json": {
+            "message": "hello from Django",
+            "method": "GET"
+          },
+          "set_cookie": "",
+          "status": 200
+        },
+        {
+          "case": "POST_NO_CSRF",
+          "json": null,
+          "set_cookie": "",
+          "status": 403
+        },
+        {
+          "case": "POST",
+          "json": {
+            "body": {
+              "hello": "wasm"
+            },
+            "method": "POST"
+          },
+          "set_cookie": "",
+          "status": 200
+        },
+        {
+          "case": "404",
+          "json": null,
+          "set_cookie": "",
+          "status": 404
+        },
+        {
+          "case": "COOKIE_SET",
+          "json": {
+            "saved": true
+          },
+          "set_cookie": "Set-Cookie: counter=42; Path=/",
+          "status": 200
+        },
+        {
+          "case": "COOKIE_READ",
+          "json": {
+            "counter": "42"
+          },
+          "set_cookie": "",
+          "status": 200
+        }
+      ],
+      "observations": {
+        "ORM_ERROR": {
+          "message": "You cannot call this from an async context - use a thread or sync_to_async.",
+          "type": "SynchronousOnlyOperation"
+        },
+        "ORM_VIA_SYNC_TO_ASYNC_ERROR": {
+          "message": "You cannot call this from an async context - use a thread or sync_to_async.",
+          "type": "SynchronousOnlyOperation"
+        },
+        "THREAD_ERROR": {
+          "message": "can't start new thread",
+          "type": "RuntimeError"
+        },
+        "ASYNC_CONTEXT": "WebLoop",
+        "SYNC_TO_ASYNC_OK": "42",
+        "CSRF_SETUP": "200 True"
+      },
+      "stderr": "",
+      "network": "Runtime and dependency downloads used jsDelivr and PyPI; no offline claim. Framework requests used an in-process client.",
+      "wheelDownloads": [
+        {
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/micropip-0.11.1-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/c0/1b/54f4ad77cd8a584fa70746c47df988e002cf1ee1eba43364d46f87803647/asgiref-3.12.1-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/d9/50/f00935da0ec7cbf325f8dc4f772ae46fbc7b672dd62876e73f0a94adda57/sqlparse-0.6.0-py3-none-any.whl",
+          "status": 200
+        },
+        {
+          "url": "https://files.pythonhosted.org/packages/8d/ca/c1040a4fd15754ede7df15fd72fc2e123045b473b253ab5f5284e11c651e/django-6.1.1-py3-none-any.whl",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "fastapi",
+      "source": "docs/examples/framework-fastapi.py",
+      "sourceSha256": "cc0e5d2aafc9aa71bb9793c070310b7431b406bfd97634fb9f88343a1d3c57a8",
+      "workerOptions": {
+        "autoPackages": true,
+        "micropip": false,
+        "packages": []
+      },
+      "reportedVersion": {
+        "type": "version",
+        "version": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8",
+        "platform": "emscripten"
+      },
+      "completion": {
+        "type": "done",
+        "exitCode": 0
+      },
+      "result": {
+        "versions": {
+          "fastapi": "0.136.1",
+          "starlette": "1.0.0",
+          "anyio": "4.13.0",
+          "httpx": "0.28.1",
+          "httpcore": "1.0.9",
+          "pydantic": "2.12.5",
+          "pydantic-core": "2.41.5",
+          "annotated-doc": "0.0.4",
+          "annotated-types": "0.7.0",
+          "typing-extensions": "4.15.0",
+          "typing-inspection": "0.4.2",
+          "sniffio": "1.3.1",
+          "idna": "3.11",
+          "certifi": "2026.4.22",
+          "h11": "0.16.0",
+          "jinja2": "3.1.6",
+          "markupsafe": "3.0.3"
+        },
+        "http": [
+          {
+            "method": "GET",
+            "path": "/hello/BeforeStartup",
+            "status": 200,
+            "json": {
+              "hello": "BeforeStartup",
+              "started": false
+            },
+            "headers": {
+              "content-length": "41",
+              "content-type": "application/json",
+              "x-simulated-http": "asgi",
+              "set-cookie": "fixture=fastapi; Path=/; SameSite=lax"
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/hello/Ada",
+            "status": 200,
+            "json": {
+              "hello": "Ada",
+              "started": true
+            },
+            "headers": {
+              "content-length": "30",
+              "content-type": "application/json",
+              "x-simulated-http": "asgi",
+              "set-cookie": "fixture=fastapi; Path=/; SameSite=lax"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/items",
+            "status": 201,
+            "json": {
+              "name": "widget",
+              "quantity": 3
+            },
+            "headers": {
+              "content-length": "30",
+              "content-type": "application/json"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/items",
+            "status": 422,
+            "json": {
+              "detail": [
+                {
+                  "type": "greater_than",
+                  "loc": [
+                    "body",
+                    "quantity"
+                  ],
+                  "msg": "Input should be greater than 0",
+                  "input": 0,
+                  "ctx": {
+                    "gt": 0
+                  }
+                }
+              ]
+            },
+            "headers": {
+              "content-length": "126",
+              "content-type": "application/json"
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/missing",
+            "status": 404,
+            "json": {
+              "detail": "Not Found"
+            },
+            "headers": {
+              "content-length": "22",
+              "content-type": "application/json"
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/stock/widget",
+            "status": 200,
+            "json": {
+              "source": "mock-service",
+              "stock": {
+                "sku": "widget",
+                "available": 7
+              }
+            },
+            "headers": {
+              "content-length": "64",
+              "content-type": "application/json"
+            }
+          }
+        ],
+        "transportStartsLifespan": false,
+        "lifespanStartup": {
+          "type": "lifespan.startup.complete"
+        },
+        "unknownOutbound": {
+          "blocked": true,
+          "message": "Unconfigured outbound request: GET https://catalog.fixture.invalid/stock/not-configured"
+        },
+        "mockOutboundRequests": [
+          {
+            "method": "GET",
+            "url": "https://catalog.fixture.invalid/stock/widget"
+          },
+          {
+            "method": "GET",
+            "url": "https://catalog.fixture.invalid/stock/not-configured"
+          }
+        ],
+        "syncRoute": {
+          "completed": false,
+          "type": "RuntimeError",
+          "message": "can't start new thread"
+        },
+        "lifespanShutdown": {
+          "type": "lifespan.shutdown.complete"
+        },
+        "lifecycleEvents": [
+          "startup",
+          "shutdown"
+        ]
+      },
+      "distributionWheels": [
+        {
+          "name": "annotated-doc",
+          "version": "0.0.4",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/annotated_doc-0.0.4-py3-none-any.whl",
+          "sha256": "fe0eb2459fae5e2b67eec182a864ee4e3b7fade3bc8542fc5b87b23f224fa7a4",
+          "matchesLock": true
+        },
+        {
+          "name": "annotated-types",
+          "version": "0.7.0",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/annotated_types-0.7.0-py3-none-any.whl",
+          "sha256": "6541523b4b16c1953d2fc9b82fb86c540eea9f78fca329ab371ed13a8b0faa51",
+          "matchesLock": true
+        },
+        {
+          "name": "anyio",
+          "version": "4.13.0",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/anyio-4.13.0-py3-none-any.whl",
+          "sha256": "ea08c971f29d33d940864407ceb08601836ac8924d3b4f27db6612ed47faeafc",
+          "matchesLock": true
+        },
+        {
+          "name": "certifi",
+          "version": "2026.4.22",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/certifi-2026.4.22-py3-none-any.whl",
+          "sha256": "c2c0091986db798df5fd84582d289496f31244a898ec032b7015278c2d82c80c",
+          "matchesLock": true
+        },
+        {
+          "name": "fastapi",
+          "version": "0.136.1",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/fastapi-0.136.1-py3-none-any.whl",
+          "sha256": "365df896a8691060b511a0a586d957edc1e90dbc96219c208e79824744cf0b59",
+          "matchesLock": true
+        },
+        {
+          "name": "h11",
+          "version": "0.16.0",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/h11-0.16.0-py3-none-any.whl",
+          "sha256": "d920caa25363694bc8de71ba42e5e2bc3353c8df6bcf5025551386e279bca264",
+          "matchesLock": true
+        },
+        {
+          "name": "httpcore",
+          "version": "1.0.9",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/httpcore-1.0.9-py3-none-any.whl",
+          "sha256": "27bc91994ad7e21a8333608b8ba5e2b9655ae9d86820d4cefb03dd8db8c5de48",
+          "matchesLock": true
+        },
+        {
+          "name": "httpx",
+          "version": "0.28.1",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/httpx-0.28.1-py3-none-any.whl",
+          "sha256": "830cb1ec73bb4c46f2e38ebeb3dd50ffb45f62b804dd040519d34fe36f8fdfc7",
+          "matchesLock": true
+        },
+        {
+          "name": "idna",
+          "version": "3.11",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/idna-3.11-py3-none-any.whl",
+          "sha256": "1619419bc899f07c7a608a12e8238e5e0bc15bb25fec90cfe20a86bb849ba0d8",
+          "matchesLock": true
+        },
+        {
+          "name": "jinja2",
+          "version": "3.1.6",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/jinja2-3.1.6-py3-none-any.whl",
+          "sha256": "9330ec9cf2241fb8fc352928ea5e72016bf82de1d3d3b71ffea52a093a3ebab8",
+          "matchesLock": true
+        },
+        {
+          "name": "markupsafe",
+          "version": "3.0.3",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/markupsafe-3.0.3-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "b44c364dc0d19e4210ce68ab77833c2b5d608f78fe6966263add4fc1fa667d97",
+          "matchesLock": true
+        },
+        {
+          "name": "pydantic",
+          "version": "2.12.5",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pydantic-2.12.5-py3-none-any.whl",
+          "sha256": "04854875001e07a8a74d87b7c80296cba168773d8c9804e232d695f82484d7d7",
+          "matchesLock": true
+        },
+        {
+          "name": "pydantic-core",
+          "version": "2.41.5",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pydantic_core-2.41.5-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "54703fa42a0d4d574283cfb8f08050ba7820c9a42b0a21bc1286407d9a9e54da",
+          "matchesLock": true
+        },
+        {
+          "name": "sniffio",
+          "version": "1.3.1",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/sniffio-1.3.1-py3-none-any.whl",
+          "sha256": "1e0f350ca8eac5252c1af9a8d93a7edd70056c1eddf5661f6950688094d1f670",
+          "matchesLock": true
+        },
+        {
+          "name": "starlette",
+          "version": "1.0.0",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/starlette-1.0.0-py3-none-any.whl",
+          "sha256": "df724767987f398d2c504d1201acdb3aa8c0032f2e50c9815c389863f62d0ce1",
+          "matchesLock": true
+        },
+        {
+          "name": "typing-extensions",
+          "version": "4.15.0",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/typing_extensions-4.15.0-py3-none-any.whl",
+          "sha256": "4fec68770a05408e668a4fa53d6bf4f0f684b9dacf820c7c5d6e97d3ad225e29",
+          "matchesLock": true
+        },
+        {
+          "name": "typing-inspection",
+          "version": "0.4.2",
+          "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/typing_inspection-0.4.2-py3-none-any.whl",
+          "sha256": "deb989630985f7a7296b90357a947a804a7612cecbb6439d6e71128e01f61051",
+          "matchesLock": true
+        }
+      ],
+      "network": {
+        "method": "Fresh context, serviceWorkers:block, only the loopback asset origin allowed by request routing",
+        "requests": 24,
+        "responseStatuses": [
+          200
+        ],
+        "rejectedRequests": [],
+        "failedRequests": [],
+        "mockServiceRequests": 2,
+        "mockServiceBrowserRequests": 0,
+        "scope": "Direct HTTP request interception with all local asset responses HTTP 200; no redirects observed. This was not a firewall test."
+      },
+      "thirdPartyModifications": "None made for this probe; tested the upstream Pyodide distribution wheels, including its HTTPX adaptation."
+    }
+  ],
+  "limits": [
+    "Request dispatch and fixture behavior only; no persistent application host or service-worker navigation bridge.",
+    "Cookies were handled by framework/HTTPX clients, not tested as browser login cookies.",
+    "Flask and Django used public package downloads; FastAPI used a local mirror with origin-checked browser requests.",
+    "No historical Python framework matrix, production backend, streaming or WebSocket acceptance.",
+    "Expected unsupported operations were captured; script completion does not imply every operation succeeded."
+  ]
+}
