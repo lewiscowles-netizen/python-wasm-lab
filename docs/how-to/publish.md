@@ -20,7 +20,7 @@ cp scripts/import-runtimes.py "$publish_dir/scripts/"
 
 Copying the playground directory includes its ignored generated files when present. The extra source and convention files preserve documentation links. Check that the staged `runtimes.local.json` names only bundles included under its adjacent `builds/` directory. Retain each whole exported bundle, including its manifest and notices. Do not upload the entire research checkout, `.git`, `node_modules`, compiler source trees or test output.
 
-If publishing only the baseline Pyodide comparison, omit the local catalog and local build directories together. Pyodide still downloads its runtime and optional packages from external hosts; this procedure does not make it offline.
+If publishing only the baseline Pyodide comparison, omit the local catalog and local build directories together. Pyodide still downloads its runtime and optional packages from external hosts; follow [closed-network deployment](deploy-offline.md) to supply those locally.
 
 ## Verify the staged site
 
