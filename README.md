@@ -13,6 +13,7 @@ A browser playground for comparing CPython releases and Pyodide, with editable e
 | Choose between runtime approaches | [Runtime alternatives](docs/explanation/runtime-alternatives.md) |
 | Understand package and application support | [Packages and applications](docs/explanation/packages-and-applications.md) |
 | Bring your own project | [Project integration guide](docs/how-to/import-project.md) |
+| Run Django, Flask or FastAPI requests | [Framework probes](docs/how-to/probe-frameworks.md) and [browser-playground design](docs/explanation/framework-playgrounds.md) |
 | Run inside a closed network | [Internal deployment](docs/how-to/deploy-offline.md) and [intranet debugging](docs/how-to/debug-intranet.md) |
 | Rebuild, verify or deploy | [Documentation index](docs/README.md) |
 | Assess what has actually passed | [Validation reference](docs/reference/validation.md) |
