@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-29T16:13:40.996Z",
+  "passed": true,
+  "method": "Real Chromium worker Fetch requests to an unmodified native Python HTTP service; no request routing, fulfillment, CORS bypass, service worker, or package download during verification.",
+  "scope": "Observed requests from these fresh browser contexts were loopback-only. This is an observation of this run, not a firewall or arbitrary-code isolation claim.",
+  "sources": {
+    "worker": {
+      "path": "experiments/wasm/python/worker.mjs",
+      "sha256": "4bed887bac7dac75dce35ee5d428e0bbcfea44d604b6be196e46b0f8786652f5"
+    },
+    "service": {
+      "path": "docs/examples/external-service.py",
+      "sha256": "b6801e8364eed7660c0dfa8d6a421724de8e86f63c0c4063e28e426ccfa3e25b"
+    },
+    "client": {
+      "path": "docs/examples/external-service-client.py",
+      "sha256": "51021f3d2184ce3c2b7e4309e44b34b296da8311cd0f81a63a7545cc4b93188a"
+    },
+    "harness": {
+      "path": "scripts/check-external-service.cjs",
+      "sha256": "444b24f1af5438aac180d35031989d0c33c3f4680d9cc1bb2a80cea38a713ba4"
+    }
+  },
+  "runtime": {
+    "distribution": "314.0.7",
+    "expectedPython": "3.14.2",
+    "hashProvenance": "Hashes observed in prior downloads from the recorded pinned CDN URLs, not an upstream signature or signed manifest; this run only verifies existing local files.",
+    "assets": [
+      {
+        "filename": "pyodide.mjs",
+        "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+        "bytes": 17931,
+        "originalURL": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs"
+      },
+      {
+        "filename": "pyodide.asm.mjs",
+        "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+        "bytes": 1250344,
+        "originalURL": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.asm.mjs"
+      },
+      {
+        "filename": "pyodide.asm.wasm",
+        "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+        "bytes": 9598218,
+        "originalURL": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.asm.wasm"
+      },
+      {
+        "filename": "python_stdlib.zip",
+        "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+        "bytes": 2545637,
+        "originalURL": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/python_stdlib.zip"
+      },
+      {
+        "filename": "pyodide-lock.json",
+        "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+        "bytes": 119077,
+        "originalURL": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide-lock.json"
+      }
+    ]
+  },
+  "nativePython": "Python 3.14.5",
+  "browser": "151.0.7922.34",
+  "playwright": "1.62.1",
+  "origins": {
+    "allowedOrigin": "http://127.0.0.1:61660",
+    "rejectedOrigin": "http://127.0.0.1:61661",
+    "serviceOrigin": "http://127.0.0.1:61662"
+  },
+  "clientSubstitution": {
+    "onlyChange": "SERVICE_URL uses the native service ephemeral loopback port",
+    "originalSHA256": "51021f3d2184ce3c2b7e4309e44b34b296da8311cd0f81a63a7545cc4b93188a",
+    "executedSHA256": "beae78a935c53ea1509bb483f34d3300d721778e2b0082c47d881f05abf8f615"
+  },
+  "scenarios": [
+    {
+      "name": "documented-client",
+      "sourceSHA256": "beae78a935c53ea1509bb483f34d3300d721778e2b0082c47d881f05abf8f615",
+      "terminalMessage": {
+        "type": "done",
+        "exitCode": 0
+      },
+      "reportedPython": {
+        "type": "version",
+        "version": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8",
+        "platform": "emscripten"
+      },
+      "expectedBrowserFailure": "The slow request is aborted by its 50 ms deadline.",
+      "requestEventOrigins": {
+        "http://127.0.0.1:61660": 7,
+        "http://127.0.0.1:61662": 5
+      },
+      "observedBrowserFailures": [
+        {
+          "method": "GET",
+          "path": "/slow",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "rejected-origin",
+      "sourceSHA256": "e0e6dd2db000e49172908b8cdaa08513a2db111ba234cb6dd3bdc99bdf6277d5",
+      "terminalMessage": {
+        "type": "done",
+        "exitCode": 0
+      },
+      "reportedPython": {
+        "type": "version",
+        "version": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8",
+        "platform": "emscripten"
+      },
+      "expectedBrowserFailure": "CORS blocks a GET response and rejects the POST preflight.",
+      "requestEventOrigins": {
+        "http://127.0.0.1:61661": 7,
+        "http://127.0.0.1:61662": 2
+      },
+      "observedBrowserFailures": [
+        {
+          "method": "GET",
+          "path": "/stock/widget",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "method": "POST",
+          "path": "/quote",
+          "error": "net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "service-unavailable",
+      "sourceSHA256": "f45f63dd03f221f972d8642b58d5fa469c7b68d82db3c03dfbee7e556ceb9f75",
+      "terminalMessage": {
+        "type": "done",
+        "exitCode": 0
+      },
+      "reportedPython": {
+        "type": "version",
+        "version": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8",
+        "platform": "emscripten"
+      },
+      "expectedBrowserFailure": "The stopped service refuses the connection.",
+      "requestEventOrigins": {
+        "http://127.0.0.1:61660": 7,
+        "http://127.0.0.1:61662": 1
+      },
+      "observedBrowserFailures": [
+        {
+          "method": "GET",
+          "path": "/stock/widget",
+          "error": "net::ERR_CONNECTION_REFUSED"
+        }
+      ],
+      "pageErrors": []
+    }
+  ],
+  "happyPath": {
+    "stock": {
+      "body": {
+        "available": 7,
+        "sku": "widget",
+        "unit_price_cents": 125
+      },
+      "request_id": "aa175da90755488c87d51dc64e81fb14",
+      "status": 200
+    },
+    "quote": {
+      "body": {
+        "quantity": 2,
+        "sku": "widget",
+        "total_cents": 250
+      },
+      "request_id": "0b4a9c446e414c52b9ca8a4972aadba9",
+      "status": 200
+    },
+    "expectedHTTPStatuses": [
+      404,
+      422
+    ],
+    "timeout": "TimeoutError: Service request deadline expired",
+    "exposedRequestIDs": true,
+    "requestIDsCorrelateWithServiceLog": true
+  },
+  "requestIDLogCorrelation": [
+    {
+      "method": "GET",
+      "path": "/stock/widget",
+      "status": 200,
+      "requestID": "aa175da90755488c87d51dc64e81fb14"
+    },
+    {
+      "method": "POST",
+      "path": "/quote",
+      "status": 200,
+      "requestID": "0b4a9c446e414c52b9ca8a4972aadba9"
+    }
+  ],
+  "successfulJSONPreflights": [
+    {
+      "method": "OPTIONS",
+      "path": "/quote",
+      "status": 204,
+      "requestID": "9063c2b6ea8342c9a8e92c0ea331118c"
+    }
+  ],
+  "rejectedOrigin": {
+    "pythonResults": [
+      {
+        "path": "/stock/widget",
+        "type": "AbortError",
+        "message": "Failed to fetch",
+        "responseReadable": false,
+        "isOSError": true
+      },
+      {
+        "path": "/quote",
+        "type": "AbortError",
+        "message": "Failed to fetch",
+        "responseReadable": false,
+        "isOSError": true
+      }
+    ],
+    "serviceRecords": [
+      {
+        "method": "GET",
+        "path": "/stock/widget",
+        "status": 403,
+        "requestID": "78584454982f4579ac8c49bd52b0780f"
+      },
+      {
+        "method": "OPTIONS",
+        "path": "/quote",
+        "status": 403,
+        "requestID": "09a1cfc5128f40d6a013f6f7b8e714ca"
+      }
+    ],
+    "quotePOSTReachedService": false
+  },
+  "unavailableService": {
+    "type": "AbortError",
+    "message": "Failed to fetch",
+    "isTimeout": false,
+    "isOSError": true
+  },
+  "nativeValidation": [
+    {
+      "name": "malformed JSON",
+      "method": "POST",
+      "path": "/quote",
+      "status": 400,
+      "error": "invalid_json"
+    },
+    {
+      "name": "boolean quantity",
+      "method": "POST",
+      "path": "/quote",
+      "status": 422,
+      "error": "invalid_quote"
+    },
+    {
+      "name": "fractional quantity",
+      "method": "POST",
+      "path": "/quote",
+      "status": 422,
+      "error": "invalid_quote"
+    },
+    {
+      "name": "quantity above stock",
+      "method": "POST",
+      "path": "/quote",
+      "status": 422,
+      "error": "invalid_quote"
+    },
+    {
+      "name": "wrong object shape",
+      "method": "POST",
+      "path": "/quote",
+      "status": 422,
+      "error": "invalid_quote"
+    },
+    {
+      "name": "empty body",
+      "method": "POST",
+      "path": "/quote",
+      "status": 413,
+      "error": "body_size"
+    },
+    {
+      "name": "oversized body",
+      "method": "POST",
+      "path": "/quote",
+      "status": 413,
+      "error": "body_size"
+    },
+    {
+      "name": "non-JSON media type",
+      "method": "POST",
+      "path": "/quote",
+      "status": 415,
+      "error": "json_required"
+    },
+    {
+      "name": "unsupported preflight header",
+      "method": "OPTIONS",
+      "path": "/quote",
+      "status": 403,
+      "error": "preflight_not_allowed"
+    }
+  ],
+  "originAudit": {
+    "browserRequestEventOrigins": {
+      "http://127.0.0.1:61660": 14,
+      "http://127.0.0.1:61662": 8,
+      "http://127.0.0.1:61661": 7
+    },
+    "unexpectedOrigins": [],
+    "interpretation": "Browser request events include blocked attempts; native service logs establish whether a request reached the service. No internet request was observed, and no network firewall was installed."
+  }
+}
