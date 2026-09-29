@@ -12,7 +12,7 @@ From the lab repository root, stage the active playground and its documentation 
 publish_dir=$(mktemp -d)
 mkdir -p "$publish_dir/experiments/wasm"
 cp -R experiments/wasm/python "$publish_dir/experiments/wasm/"
-cp README.md AGENTS.md "$publish_dir/"
+cp README.md AGENTS.md appendix.md "$publish_dir/"
 cp -R docs "$publish_dir/"
 mkdir -p "$publish_dir/scripts"
 cp scripts/import-runtimes.py "$publish_dir/scripts/"
