@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-29T16:29:47.946971+00:00",
+  "scope": "Core module semantics in a native CLI; not a WASI, hostile-tenant, side-channel or cloud certification.",
+  "host": "macOS-26.7-arm64-arm-64bit-Mach-O",
+  "runtime": {
+    "version": "wasmtime 49.0.1 (46c23a87d 2026-09-24)",
+    "binarySHA256": "112d2142b0119362ab17777a1a6319c42cbff63627dae90ac55aba84df4383cf"
+  },
+  "sources": [
+    {
+      "path": "scripts/check-isolation.py",
+      "sha256": "7690a27d2ded7c9d1c245ba012aec0c8fd469d840e5b622fb5540991ce1234ad"
+    },
+    {
+      "path": "docs/examples/isolation/catalog.wat",
+      "sha256": "7dc99a9127d9d4012faa3835d3a61379ee8bb707774bc570129ea1b379a5056a"
+    },
+    {
+      "path": "docs/examples/isolation/consumer.wat",
+      "sha256": "6bf45826f073d12fcd678b10d4dff686f73fea9dcfa2c0c1979804467beb40e7"
+    },
+    {
+      "path": "docs/examples/isolation/instances.wat",
+      "sha256": "457b55182f1ce5e9d468aa12f681055f38725ccd77636a6e2816dbe63a9c8f8c"
+    },
+    {
+      "path": "docs/examples/isolation/memory.wat",
+      "sha256": "a44d627f26cc3725fcb758dcd452d0dd7740ed3c206ba17190cb3e41bd2fed28"
+    },
+    {
+      "path": "docs/examples/isolation/wrong-catalog.wat",
+      "sha256": "79af3773e8fa23e68f465af5df67c2855846cb76da6ed4ec2e5afdeec0972815"
+    }
+  ],
+  "cases": [
+    {
+      "name": "in-bounds read",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--invoke",
+        "read",
+        "memory.wat",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "42",
+      "passed": true
+    },
+    {
+      "name": "last valid byte",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--invoke",
+        "read",
+        "memory.wat",
+        "65535"
+      ],
+      "exitCode": 0,
+      "stdout": "0",
+      "passed": true
+    },
+    {
+      "name": "out-of-bounds read",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--invoke",
+        "read",
+        "memory.wat",
+        "65536"
+      ],
+      "exitCode": 134,
+      "stdout": "",
+      "passed": true,
+      "expectedFailure": true,
+      "failureCategory": "out of bounds memory access"
+    },
+    {
+      "name": "in-bounds neighbour overwrite",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--invoke",
+        "overwrite-neighbour",
+        "memory.wat"
+      ],
+      "exitCode": 0,
+      "stdout": "99",
+      "passed": true
+    },
+    {
+      "name": "growth without host cap",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--invoke",
+        "grow",
+        "memory.wat"
+      ],
+      "exitCode": 0,
+      "stdout": "1",
+      "passed": true
+    },
+    {
+      "name": "growth denied by host cap",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "-W",
+        "max-memory-size=65536",
+        "--invoke",
+        "grow",
+        "memory.wat"
+      ],
+      "exitCode": 0,
+      "stdout": "-1",
+      "passed": true
+    },
+    {
+      "name": "fuel ends infinite loop",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "-W",
+        "fuel=1000",
+        "--invoke",
+        "spin",
+        "memory.wat"
+      ],
+      "exitCode": 134,
+      "stdout": "",
+      "passed": true,
+      "expectedFailure": true,
+      "failureCategory": "all fuel consumed"
+    },
+    {
+      "name": "missing capability import",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--invoke",
+        "quote",
+        "consumer.wat",
+        "2"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "passed": true,
+      "expectedFailure": true,
+      "failureCategory": "unknown import"
+    },
+    {
+      "name": "linked capability",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--preload",
+        "catalog=catalog.wat",
+        "--invoke",
+        "quote",
+        "consumer.wat",
+        "2"
+      ],
+      "exitCode": 0,
+      "stdout": "250",
+      "passed": true
+    },
+    {
+      "name": "wrong import signature",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--preload",
+        "catalog=wrong-catalog.wat",
+        "--invoke",
+        "quote",
+        "consumer.wat",
+        "2"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "passed": true,
+      "expectedFailure": true,
+      "failureCategory": "incompatible import type"
+    },
+    {
+      "name": "two independent memories",
+      "arguments": [
+        "run",
+        "-S",
+        "cli=n",
+        "--preload",
+        "left=memory.wat",
+        "--preload",
+        "right=memory.wat",
+        "--invoke",
+        "observe",
+        "instances.wat"
+      ],
+      "exitCode": 0,
+      "stdout": "77\n42",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "verificationMode": "Python -O; acceptance checks remain enabled",
+  "rawOutput": "Ignored test-results/isolation.json; regenerate with scripts/check-isolation.py"
+}
