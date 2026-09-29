@@ -2,7 +2,7 @@
 
 Choose a document by the question you need answered. The types follow [Diátaxis](https://diataxis.fr/): tutorials teach, how-to guides accomplish a task, references specify interfaces, and explanations describe reasons and trade-offs.
 
-For a structured progression, use the [Python WebAssembly learning path](learning-path.md), with a practical checkpoint at each stage.
+For a structured progression, use the [Python WebAssembly learning path](learning-path.md), with a practical checkpoint at each stage. The [edge and WASI study map](edge.md) adds container-free application packaging, local labs, isolation analysis and research references.
 
 ## Tutorial
 
