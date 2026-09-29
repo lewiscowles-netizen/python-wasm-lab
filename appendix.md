@@ -34,3 +34,7 @@ All five extracted trees and six standalone CPython references matched their ups
 The two retained `legacy/patches/python2-*.patch` files and their license match the Python Emscripten port commit above. Their presence is intentional source, not a downloaded working tree.
 
 `legacy/dist/`, `transitional/dist/`, `mid-modern/builds/`, configuration exports, logs, bytecode and temporary commit messages are generated investigation material, not upstream dependencies. The [validation reference](docs/reference/validation.md) owns retained results; the [rebuild guide](docs/how-to/rebuild.md) describes artifact regeneration.
+
+## Edge investigation
+
+The [edge source ledger](docs/reference/edge-sources.json) records platform documentation and pinned interface/runtime source revisions. The [Cloudflare lab reference](docs/reference/cloudflare-edge-lab.md) identifies its dependency locks; the [WASI lab reference](docs/reference/wasi-edge-lab.md) identifies its toolchain archive checksums and source commit. Those generated tools and dependency trees are ignored locally.
