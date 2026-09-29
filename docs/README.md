@@ -12,6 +12,10 @@ Choose a document by the question you need answered. The types follow [Diátaxis
 - [Rebuild interpreters](how-to/rebuild.md): replay the builder's version-family recipes and refresh the lab.
 - [Run browser checks](how-to/test.md): verify local interpreters and optional network-dependent applications.
 - [Publish the playground](how-to/publish.md): stage a complete static deployment with its matching runtime files.
+- [Bring in a project](how-to/import-project.md): stage multiple source files, dependencies and data, then validate an application boundary.
+- [Deploy without internet access](how-to/deploy-offline.md): mirror runtimes, wheels and application assets for an internal host.
+- [Debug an intranet deployment](how-to/debug-intranet.md): locate loader, package, browser-policy and application failures.
+- [Check external requests](how-to/verify-no-egress.md): run a reproducible browser check with an explicit origin boundary.
 
 ## Reference
 
@@ -20,6 +24,7 @@ Choose a document by the question you need answered. The types follow [Diátaxis
 - [Runtime artifacts](reference/artifacts.md): catalog fields, bundles, loader expectations and import checks.
 - [Validation evidence](reference/validation.md): recorded tests, matching artifacts and untested boundaries.
 - [Source provenance appendix](../appendix.md): upstream repositories, immutable commits, release downloads and checksums.
+- [Network dependencies](reference/network-dependencies.md): request phases, package-index behavior and measured local-hosting checks.
 
 ## Explanation
 
