@@ -22,4 +22,4 @@ Those calls exercise the application in-process through its Asynchronous Server 
 
 Keeping dependencies local can remove startup downloads, but version pins alone neither vendor wheels nor prove offline operation. Remote wheels and datasets depend on browser fetch rules, including cross-origin resource sharing (CORS). Persistent data requires a storage integration and synchronization policy; virtual-file writes alone do not provide persistence. These are deployment decisions beyond selecting an installer.
 
-The [guided examples](../../experiments/wasm/python/LAB-NOTES.md) provide the practical walkthrough. [Runtime alternatives](runtime-alternatives.md) explains which interpreter and host combinations can supply the underlying facilities.
+The [guided examples](../../experiments/wasm/python/LAB-NOTES.md) provide the practical walkthrough. For your own application, follow [project integration](../how-to/import-project.md) and [closed-network deployment](../how-to/deploy-offline.md). [Runtime alternatives](runtime-alternatives.md) explains which interpreter and host combinations can supply the underlying facilities.
