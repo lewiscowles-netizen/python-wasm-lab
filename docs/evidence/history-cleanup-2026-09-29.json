@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-29",
+  "repository": "https://github.com/lewiscowles-netizen/python-wasm-lab",
+  "operation": "Remove downloaded source copies, unconfigured gitlinks and generated research output from main history",
+  "tool": {
+    "name": "git-filter-repo",
+    "version": "2.47.0"
+  },
+  "previousPublishedHead": "f34d333ad42e01177e583d5ff3a06c9be2b51174",
+  "preRewriteTip": "cee81b333f970f1e8c4cec0f0c1222e13fb722b8",
+  "rewrittenTip": "a6030592db606c061e19e3a57507d27c772e74df",
+  "tipTreeBeforeAndAfterRewrite": "b767b7fddadf448f67e94da17cb7492c71fbc119",
+  "removedTrackedPaths": 18851,
+  "removedTrackedFileBytes": 532007679,
+  "removedPathRegex": "^(?:cpython\\-modern$|pyenv$|legacy/python\\-emscripten$|legacy/branch27$|legacy/branch30_33$|Makefile\\-3\\.13\\.in$|configure\\-3\\.13\\.ac$|transitional/posixmodule\\-3\\.10\\.c$|legacy/pyenv\\-definitions\\-list\\.json$|legacy/early3\\-bake\\-verified\\.json$|legacy/commit\\-early3\\-message\\.txt$|legacy/commit27\\-message\\.txt$|legacy/dist/|transitional/dist/|mid\\-modern/builds/|legacy/configuration/|transitional/configuration/|legacy/pyenv\\-definitions/|transitional/source\\-reference\\-|legacy/Python-\\d|.*\\.(?:log|pyc|pyo)$|(?:.*/)?__pycache__/)",
+  "verification": {
+    "everyRewrittenCommitTreeChecked": 24,
+    "excludedPathsRemainingInRewrittenHistory": 0,
+    "workingTreeChangedByRewrite": false,
+    "localFilesByteAndModeIdentical": 18846,
+    "nestedGitCheckoutHeadsUnchanged": 5,
+    "browserEvidenceSourceHashesMatched": 10,
+    "browserEvidenceRuntimeCount": 17,
+    "browserEvidenceRuntimeFilesMatched": 51
+  },
+  "browserEvidence": {
+    "report": "docs/evidence/browser-2026-09-29.json",
+    "originalSourceCommit": "c4e3cc14550e6f6c43f6b1cffe6d7ea48aa4fe15",
+    "equivalentSourceCommitAfterRewrite": "defa97ce37ae8ecd3eb6cf3b9f283282ea192a88",
+    "scope": "Commit identity mapping only. The original test report is unchanged; source and runtime hashes were rechecked, not the browser suite rerun."
+  },
+  "commitMap": {
+    "0431da6f0bff1d1f9259f3a2eedf193f6efb8342": "482da81ced2c933ca58280476ab291a32a361caa",
+    "09dac4460e20e80346e1a5aec77422c7e3d13369": "f956c6f3b5eb3c2b6be89552cbe442a50dc5d2b9",
+    "0c8d1361211108b95fa7987536094d681d6a0547": "df3006bf8a6ea9ff653d7a07495ce8f349e71cc4",
+    "134dc7776e38554463e4396c43a009187b56faa5": "c35f9434cfa1692acb1a56ac220d0667e3a8d525",
+    "147e6e3125eeba001e17b1500499b663ef8852c2": "d4bb753df367c91380a1629beee9b4b2657e314f",
+    "2bd94180b2cad3e61f2a53686f4b5a5f4344a447": "74bd5fef4ab99b872ed4040414caed1d280e7aeb",
+    "353bce0e7f3c11dcbc9164661f6504057a316f36": "405021a1c9bb964e36459cdf0bf02e07a7f1b708",
+    "413bc86cd9be580ca259418c6e22b615bc8c3536": "027259235f6de928e1cc1598737a6e80db81c610",
+    "4ebc056668a0b0a15f9d9e70298480867cee833c": "bfcbab64dbe80a47269b55f452ebfc71928f3b9a",
+    "5507ec26c368a8c5840b7826c651d382789796f5": "8abe5412ab5d32ebd94cb7d641ace9e30013a8e4",
+    "6a706a0a136bdd895a248487477ff463aa7c95f6": "36fc7d0d329675523e74b258907360b81bd1cc0c",
+    "6eeb56510b4abf1279523aa04967d8c6af687283": "d34ba541ba705c6ce11437f119acc2078ddd86eb",
+    "71e2a65e29172496f08f57a39cdb93ec96951637": "b08b42621e8ce6d0e95b2266057ce702fccbe6b0",
+    "87b9e97ff7bb661da3a01b4e5005af895b24d986": "5bcecc9acd51ba68f242af1f4915169ddb0c84ba",
+    "9537cc05bffa4d49fd8115681745ac07332f7b91": "73342b4d5942774c5536be39bef2a0268865c518",
+    "a5f017d765071a384bc06d1745bb5acf2f3eebfe": "a811b0fbe7976a48b6e92d4c64178307f9722cab",
+    "b3d24d19d7796a0a23e899cbcc799588b4c0313b": "7dc7f7c827baccc18b1dc6a7658111640c8b4c70",
+    "c4e3cc14550e6f6c43f6b1cffe6d7ea48aa4fe15": "defa97ce37ae8ecd3eb6cf3b9f283282ea192a88",
+    "cee81b333f970f1e8c4cec0f0c1222e13fb722b8": "a6030592db606c061e19e3a57507d27c772e74df",
+    "d3c67fff141a83a36457469b9b406edddc4a47c6": "bf6e6a465374cab4898c8113c149c9c77202b164",
+    "d4e17d380c95f14d0b7aedaf011aaf1353b00b18": "64c8d28c7b209bb7086e980b7711d351c38fd38d",
+    "de123e30fd826173939659965a3bfc0bfa669f13": "e7bad447391cfcdca048ef810084a48bfe377a12",
+    "ebfdaa0e04dda679cfcc81f8c7263620849c446f": "395cd020116b143da2f6350c5c1e7f83297a3851",
+    "f34d333ad42e01177e583d5ff3a06c9be2b51174": "9e0eac81667aa2abd1db8774c949bae9b8029597"
+  }
+}
