@@ -19,6 +19,7 @@ Choose a document by the question you need answered. The types follow [Diátaxis
 - [Playground interface](../experiments/wasm/python/README.md): controls, execution results and worker messages.
 - [Runtime artifacts](reference/artifacts.md): catalog fields, bundles, loader expectations and import checks.
 - [Validation evidence](reference/validation.md): recorded tests, matching artifacts and untested boundaries.
+- [Source provenance appendix](../appendix.md): upstream repositories, immutable commits, release downloads and checksums.
 
 ## Explanation
 
