@@ -5,3 +5,30 @@ test-results/
 playwright-report/
 /experiments/wasm/python/builds/
 /experiments/wasm/python/runtimes.local.json
+
+# Downloaded reference sources are identified in appendix.md.
+/cpython-modern
+/pyenv
+/legacy/python-emscripten
+/legacy/branch27
+/legacy/branch30_33
+/legacy/Python-[0-9]*
+/legacy/pyenv-definitions/
+/legacy/pyenv-definitions-list.json
+/Makefile-3.13.in
+/configure-3.13.ac
+/transitional/posixmodule-3.10.c
+/transitional/source-reference-*
+
+# Generated investigation output is reproduced by the builder.
+/legacy/dist/
+/transitional/dist/
+/mid-modern/builds/
+/legacy/configuration/
+/transitional/configuration/
+/legacy/early3-bake-verified.json
+/legacy/commit-early3-message.txt
+/legacy/commit27-message.txt
+*.log
+*.pyc
+*.pyo
