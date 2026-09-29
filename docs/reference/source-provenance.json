@@ -108,5 +108,56 @@
     "pyenvDefinitionFiles": 11,
     "pyenvComparison": "All 11 files match the pyenv commit listed in appendix.md.",
     "python2Patches": "Both patches and their license match the python-emscripten commit listed in appendix.md."
+  },
+  "copiedPyenvDefinitions": {
+    "formerDirectory": "legacy/pyenv-definitions/",
+    "upstreamDirectory": "plugins/python-build/share/python-build/",
+    "repositoryIdentity": "pyenv entry in appendix.md#git-checkouts",
+    "files": [
+      {
+        "name": "3.0.1",
+        "sha256": "258cbd0b9071727ce6dc13b3bbacab80a41b45682fb41dc5630cf272a6d23cb2"
+      },
+      {
+        "name": "3.1.5",
+        "sha256": "7f806d01d63c0894a2da1cfe522c564eb3e7718a535d04a6cdbb67624e971751"
+      },
+      {
+        "name": "3.2.6",
+        "sha256": "e198688c7200352fa5105a4299fcd7fbd88ab190fb50a24a12f79ca8728f132d"
+      },
+      {
+        "name": "3.3.7",
+        "sha256": "a702072e90c915e7ad1bd5117f913ab317cd9e2072d50d00062aa72bfd0b20c0"
+      },
+      {
+        "name": "3.4.10",
+        "sha256": "c6c30b2cdc8e92664576664b656089a54e80fe1bd7f772e92d3df687923df4ae"
+      },
+      {
+        "name": "3.5.10",
+        "sha256": "610bc02b198691af972852fbf86e15ca111341ace34975eccd3663e1b60e34e6"
+      },
+      {
+        "name": "3.6.15",
+        "sha256": "21705fc8f345bac6ac0af658573f4b2bfed3ef5fde67804debf0fe9c2627c300"
+      },
+      {
+        "name": "3.7.17",
+        "sha256": "6a1302353f8a4c2076a7a4c976301c15f9462ece271ddaf2f438b5697d7eed6b"
+      },
+      {
+        "name": "3.8.20",
+        "sha256": "b66cf1d0f6c3634446b8bcc450e6fbbbf734f552aca4de064d8c590d3e96ce96"
+      },
+      {
+        "name": "3.9.25",
+        "sha256": "9b3d9ed5e007c65a1ca4bbf087504ae24cead5063674cbb0f9df01f5c8f2e62a"
+      },
+      {
+        "name": "3.10.21",
+        "sha256": "703349433b14fd258f99bdf3e002768d092a77544de0d146cd6e4366db632583"
+      }
+    ]
   }
 }
