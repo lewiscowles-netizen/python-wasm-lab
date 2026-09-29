@@ -13,6 +13,7 @@ Choose a document by the question you need answered. The types follow [Diátaxis
 - [Run browser checks](how-to/test.md): verify local interpreters and optional network-dependent applications.
 - [Publish the playground](how-to/publish.md): stage a complete static deployment with its matching runtime files.
 - [Bring in a project](how-to/import-project.md): stage multiple source files, dependencies and data, then validate an application boundary.
+- [Probe Django, Flask and FastAPI](how-to/probe-frameworks.md): replay measured request handling and mock an outbound service.
 - [Deploy without internet access](how-to/deploy-offline.md): mirror runtimes, wheels and application assets for an internal host.
 - [Debug an intranet deployment](how-to/debug-intranet.md): locate loader, package, browser-policy and application failures.
 - [Check external requests](how-to/verify-no-egress.md): run a reproducible browser check with an explicit origin boundary.
@@ -25,6 +26,8 @@ Choose a document by the question you need answered. The types follow [Diátaxis
 - [Validation evidence](reference/validation.md): recorded tests, matching artifacts and untested boundaries.
 - [Source provenance appendix](../appendix.md): upstream repositories, immutable commits, release downloads and checksums.
 - [Network dependencies](reference/network-dependencies.md): request phases, package-index behavior and measured local-hosting checks.
+- [Framework support](reference/framework-support.md): measured request results, pinned dependencies and execution limits.
+- [Proposed application bridge](reference/framework-bridge.md): candidate request, response and lifecycle contracts for a navigable playground.
 
 ## Explanation
 
@@ -32,5 +35,6 @@ Choose a document by the question you need answered. The types follow [Diátaxis
 - [Build trade-offs](explanation/build-tradeoffs.md): historical branches, host tools, module selection and reproducibility limits.
 - [Runtime alternatives](explanation/runtime-alternatives.md): where CPython, Pyodide, WebAssembly hosts and other Python implementations differ.
 - [Packages and applications](explanation/packages-and-applications.md): package compatibility, feature toggles and the gap between a Datasette experiment and a complete application.
+- [Framework playgrounds](explanation/framework-playgrounds.md): how WordPress Playground's request-routing architecture could transfer to Python.
 
 The [writing conventions](../AGENTS.md) govern new documentation. Old research folders are retained as investigation history; they are not the current operating instructions.
