@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-09-29",
+  "releaseArchives": [
+    {
+      "formerPath": "legacy/Python-2.7.18.tar.xz",
+      "url": "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz",
+      "sha256": "b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43",
+      "upstreamTag": "v2.7.18",
+      "upstreamCommit": "8d21aa21f2cbc6d50aab3f420bb23be1d081dac4",
+      "identity": "The archive checksum identifies the downloaded bytes; the Git tag commit is a source-history reference, not an assertion of identical archive contents."
+    },
+    {
+      "formerPath": "legacy/Python-3.0.1.tar.bz2",
+      "url": "https://www.python.org/ftp/python/3.0.1/Python-3.0.1.tar.bz2",
+      "sha256": "91afb6ac16d3d22bc6bfbc80726dc85ede32bf838f660cc67016c7d0a7079add",
+      "upstreamTag": "v3.0.1",
+      "upstreamCommit": "4ca04b67f00edabe86072446f059adcb70eafcdd",
+      "identity": "The archive checksum identifies the downloaded bytes; the Git tag commit is a source-history reference, not an assertion of identical archive contents."
+    },
+    {
+      "formerPath": "legacy/Python-3.1.5.tgz",
+      "url": "https://www.python.org/ftp/python/3.1.5/Python-3.1.5.tgz",
+      "sha256": "d12dae6d06f52ef6bf1271db4d5b4d14b5dd39813e324314e72b648ef1bc0103",
+      "upstreamTag": "v3.1.5",
+      "upstreamCommit": "c37a4fdf5472b9460cc38885342ef59bce05753f",
+      "identity": "The archive checksum identifies the downloaded bytes; the Git tag commit is a source-history reference, not an assertion of identical archive contents."
+    },
+    {
+      "formerPath": "legacy/Python-3.2.6.tar.xz",
+      "url": "https://www.python.org/ftp/python/3.2.6/Python-3.2.6.tar.xz",
+      "sha256": "1d12b501819fd26afafbf8459be1aa279b56f032b4c15412de0a713ce0de7bdc",
+      "upstreamTag": "v3.2.6",
+      "upstreamCommit": "439d88542ef77d5c867b8298e4c2c6be4a412a5e",
+      "identity": "The archive checksum identifies the downloaded bytes; the Git tag commit is a source-history reference, not an assertion of identical archive contents."
+    },
+    {
+      "formerPath": "legacy/Python-3.3.7.tar.xz",
+      "url": "https://www.python.org/ftp/python/3.3.7/Python-3.3.7.tar.xz",
+      "sha256": "85f60c327501c36bc18c33370c14d472801e6af2f901dafbba056f61685429fe",
+      "upstreamTag": "v3.3.7",
+      "upstreamCommit": "17bf6b4671ec02d80ad29b278639d5307baddeb5",
+      "identity": "The archive checksum identifies the downloaded bytes; the Git tag commit is a source-history reference, not an assertion of identical archive contents."
+    }
+  ],
+  "copiedCPythonFiles": [
+    {
+      "formerPath": "Makefile-3.13.in",
+      "repository": "https://github.com/python/cpython.git",
+      "path": "Makefile.pre.in",
+      "commit": "4061bc4c35f7c26f25264666d4ba083b93d2f6f9",
+      "url": "https://github.com/python/cpython/blob/4061bc4c35f7c26f25264666d4ba083b93d2f6f9/Makefile.pre.in",
+      "sha256": "cf644ca887c5b313b33d23dfde095c14d59bfd69562231624b96c6b128fadf1b",
+      "comparison": "byte-for-byte match"
+    },
+    {
+      "formerPath": "configure-3.13.ac",
+      "repository": "https://github.com/python/cpython.git",
+      "path": "configure.ac",
+      "commit": "4061bc4c35f7c26f25264666d4ba083b93d2f6f9",
+      "url": "https://github.com/python/cpython/blob/4061bc4c35f7c26f25264666d4ba083b93d2f6f9/configure.ac",
+      "sha256": "32c5c61d7cc91065467003b2d49696e553eda162c9d7a99a2ea80aa7f585a51c",
+      "comparison": "byte-for-byte match"
+    },
+    {
+      "formerPath": "transitional/posixmodule-3.10.c",
+      "repository": "https://github.com/python/cpython.git",
+      "path": "Modules/posixmodule.c",
+      "commit": "3a19c2f0b3e91ce8f23d0cc64d4c9ee557823f24",
+      "url": "https://github.com/python/cpython/blob/3a19c2f0b3e91ce8f23d0cc64d4c9ee557823f24/Modules/posixmodule.c",
+      "sha256": "07c16b640bf80d54fa6d0ecf3082d5528f5e7d20f7f628af095019662bdf3230",
+      "comparison": "byte-for-byte match"
+    },
+    {
+      "formerPath": "transitional/source-reference-3.4-pythonrun.c",
+      "repository": "https://github.com/python/cpython.git",
+      "path": "Python/pythonrun.c",
+      "commit": "e76cbc781044ee01b059f3702c580e66266b84c5",
+      "url": "https://github.com/python/cpython/blob/e76cbc781044ee01b059f3702c580e66266b84c5/Python/pythonrun.c",
+      "sha256": "64fd7dc59b291ac3c152650831b9713261fe0eeccac70d6743d725e7b8a167a8",
+      "comparison": "byte-for-byte match"
+    },
+    {
+      "formerPath": "transitional/source-reference-3.6-object.c",
+      "repository": "https://github.com/python/cpython.git",
+      "path": "Objects/object.c",
+      "commit": "b74b1f36993a4e1700869133f3be13dd60ef4e40",
+      "url": "https://github.com/python/cpython/blob/b74b1f36993a4e1700869133f3be13dd60ef4e40/Objects/object.c",
+      "sha256": "516eb750791861f9ec12bcbc3e3814ea397b0c1ba97c21475f219a8c5f7c5688",
+      "comparison": "byte-for-byte match"
+    },
+    {
+      "formerPath": "transitional/source-reference-3.6-pylifecycle.c",
+      "repository": "https://github.com/python/cpython.git",
+      "path": "Python/pylifecycle.c",
+      "commit": "b74b1f36993a4e1700869133f3be13dd60ef4e40",
+      "url": "https://github.com/python/cpython/blob/b74b1f36993a4e1700869133f3be13dd60ef4e40/Python/pylifecycle.c",
+      "sha256": "24d4a13ed2d057ec0b24806bcd49bcbc3bef5e7158a09b6772bb319bc140b474",
+      "comparison": "byte-for-byte match"
+    }
+  ],
+  "verification": {
+    "extractedCPythonFiles": 18637,
+    "modifiedFiles": 0,
+    "addedFiles": 0,
+    "missingFiles": 0,
+    "executableBitsMatch": true,
+    "pyenvDefinitionFiles": 11,
+    "pyenvComparison": "All 11 files match the pyenv commit listed in appendix.md.",
+    "python2Patches": "Both patches and their license match the python-emscripten commit listed in appendix.md."
+  }
+}
