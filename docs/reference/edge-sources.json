@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-09-29",
+  "purpose": "Primary-source provenance for edge-platforms.md. Source revisions identify inspected evidence, not tested build recipes or a lockfile for deployment.",
+  "evidenceScope": {
+    "method": "Official documentation and pinned upstream source inspection",
+    "localPlatformBuilds": [],
+    "localPlatformExecutions": [],
+    "remoteDeployments": [],
+    "limitations": [
+      "Mutable documentation may change after the access date.",
+      "An SDK source revision does not establish rollout to a managed edge account.",
+      "Core Wasm, WASI generations, component worlds and platform APIs are not interchangeable.",
+      "Native build-tool Python minimums do not specify the Python interpreter embedded in a generated component."
+    ]
+  },
+  "sources": [
+    {
+      "id": "wasi-definitions",
+      "kind": "pinned-source",
+      "publisher": "WebAssembly",
+      "title": "WASI interface generations",
+      "url": "https://github.com/WebAssembly/WASI/blob/39c11a76958d015ace3f1bf68500057a28c7837f/README.md",
+      "rawUrl": "https://raw.githubusercontent.com/WebAssembly/WASI/39c11a76958d015ace3f1bf68500057a28c7837f/README.md",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "39c11a76958d015ace3f1bf68500057a28c7837f",
+        "committedAt": "2026-09-08T17:39:14Z",
+        "path": "README.md",
+        "sha256": "8d6c2db209df59fb17fb419724d8fb78530e523c35ef7d398fa36e64a35f46e5"
+      },
+      "evidence": "Defines Preview 1, WASI 0.2 and WASI 0.3; does not certify provider support."
+    },
+    {
+      "id": "cloudflare-wasi-shim",
+      "kind": "pinned-source",
+      "publisher": "cloudflare",
+      "title": "Experimental Workers WASI shim",
+      "url": "https://github.com/cloudflare/workers-wasi/blob/55d7dc2374f6ccf7a863127b4635de87f920b2e0/README.md",
+      "rawUrl": "https://raw.githubusercontent.com/cloudflare/workers-wasi/55d7dc2374f6ccf7a863127b4635de87f920b2e0/README.md",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "55d7dc2374f6ccf7a863127b4635de87f920b2e0",
+        "committedAt": "2024-09-20T01:55:57Z",
+        "path": "README.md",
+        "sha256": "701f4fe7c5fcdacad08affaa6b908ef5e05f2725e79f0ca9036ef6cc6ac0ac2c"
+      },
+      "evidence": "Example imports wasi_snapshot_preview1; several filesystem, polling and socket calls remain unimplemented."
+    },
+    {
+      "id": "workerd-security",
+      "kind": "pinned-source",
+      "publisher": "cloudflare",
+      "title": "Standalone workerd scope and isolation",
+      "url": "https://github.com/cloudflare/workerd/blob/ab1b3926727b2fdc1f104d99eef93a878a93f665/README.md",
+      "rawUrl": "https://raw.githubusercontent.com/cloudflare/workerd/ab1b3926727b2fdc1f104d99eef93a878a93f665/README.md",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "ab1b3926727b2fdc1f104d99eef93a878a93f665",
+        "committedAt": "2026-09-29T16:09:09Z",
+        "path": "README.md",
+        "sha256": "7657997fb92fc96d196af245c473c5460e386ec3e2ac3ec1fa7f05d69de12a6f"
+      },
+      "evidence": "Explicitly warns that workerd alone is not a hardened sandbox for potentially malicious code."
+    },
+    {
+      "id": "workerd-python-versions",
+      "kind": "pinned-source",
+      "publisher": "cloudflare",
+      "title": "Pyodide build metadata in workerd source",
+      "url": "https://github.com/cloudflare/workerd/blob/ab1b3926727b2fdc1f104d99eef93a878a93f665/build/python_metadata.bzl",
+      "rawUrl": "https://raw.githubusercontent.com/cloudflare/workerd/ab1b3926727b2fdc1f104d99eef93a878a93f665/build/python_metadata.bzl",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "ab1b3926727b2fdc1f104d99eef93a878a93f665",
+        "committedAt": "2026-09-29T16:09:09Z",
+        "path": "build/python_metadata.bzl",
+        "sha256": "5e0467837a76e9c1cd2ddb63db4f4a00580132068cf3c2026965fd4825bed818"
+      },
+      "evidence": "Contains Pyodide 0.26.0a2, 0.28.2, 314.0.4 and 314.0.6 entries; source metadata does not prove the runtime deployed to an account."
+    },
+    {
+      "id": "workerd-python-flags",
+      "kind": "pinned-source",
+      "publisher": "cloudflare",
+      "title": "Python compatibility flag selection",
+      "url": "https://github.com/cloudflare/workerd/blob/ab1b3926727b2fdc1f104d99eef93a878a93f665/src/workerd/io/compatibility-date.capnp",
+      "rawUrl": "https://raw.githubusercontent.com/cloudflare/workerd/ab1b3926727b2fdc1f104d99eef93a878a93f665/src/workerd/io/compatibility-date.capnp",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "ab1b3926727b2fdc1f104d99eef93a878a93f665",
+        "committedAt": "2026-09-29T16:09:09Z",
+        "path": "src/workerd/io/compatibility-date.capnp",
+        "sha256": "7e40443eaa49903597cf1866d2657cf354ed6397c37598f6371a8bb83514c0e7"
+      },
+      "evidence": "python_workers_314 is implied by python_workers after compatibility date 2026-09-08 in this source revision."
+    },
+    {
+      "id": "fastly-python-readme",
+      "kind": "pinned-source",
+      "publisher": "fastly",
+      "title": "Fastly Python packaging and caveats",
+      "url": "https://github.com/fastly/compute-sdk-python/blob/2bffcc6d596a68bcc0b4342404641deff78e68f6/README.md",
+      "rawUrl": "https://raw.githubusercontent.com/fastly/compute-sdk-python/2bffcc6d596a68bcc0b4342404641deff78e68f6/README.md",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "2bffcc6d596a68bcc0b4342404641deff78e68f6",
+        "committedAt": "2026-08-14T16:04:10Z",
+        "path": "README.md",
+        "sha256": "5e9cdb6821d5015bbe9113a9c7bf170eeb28876a4ab43090eab3fa5a8ca68f6c"
+      },
+      "evidence": "Documents component output, WSGI adaptation, beta API changes, snapshot import restrictions and absence of third-party C extension support."
+    },
+    {
+      "id": "fastly-python-version",
+      "kind": "pinned-source",
+      "publisher": "fastly",
+      "title": "Fastly Python SDK metadata",
+      "url": "https://github.com/fastly/compute-sdk-python/blob/2bffcc6d596a68bcc0b4342404641deff78e68f6/pyproject.toml",
+      "rawUrl": "https://raw.githubusercontent.com/fastly/compute-sdk-python/2bffcc6d596a68bcc0b4342404641deff78e68f6/pyproject.toml",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "2bffcc6d596a68bcc0b4342404641deff78e68f6",
+        "committedAt": "2026-08-14T16:04:10Z",
+        "path": "pyproject.toml",
+        "sha256": "ddbad4ef9ea82ac814b3a679117febec550390bcf87f1bfa1740792a125ba987"
+      },
+      "evidence": "SDK version 0.1.3; native build-tool Python requirement >=3.12 is not the guest interpreter version."
+    },
+    {
+      "id": "fastly-python-build",
+      "kind": "pinned-source",
+      "publisher": "fastly",
+      "title": "Fastly component build implementation",
+      "url": "https://github.com/fastly/compute-sdk-python/blob/2bffcc6d596a68bcc0b4342404641deff78e68f6/crates/fastly-compute-py/src/lib.rs",
+      "rawUrl": "https://raw.githubusercontent.com/fastly/compute-sdk-python/2bffcc6d596a68bcc0b4342404641deff78e68f6/crates/fastly-compute-py/src/lib.rs",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "2bffcc6d596a68bcc0b4342404641deff78e68f6",
+        "committedAt": "2026-08-14T16:04:10Z",
+        "path": "crates/fastly-compute-py/src/lib.rs",
+        "sha256": "f136f1e735e61440b5c563a21e0f28682a230aa7532a643c3460cb56e95a7a48"
+      },
+      "evidence": "Targets fastly:compute/service@0.1.0 and composes a wasiless adapter; not a claim that arbitrary components run unchanged."
+    },
+    {
+      "id": "spin-python-readme",
+      "kind": "pinned-source",
+      "publisher": "spinframework",
+      "title": "Spin Python SDK build example",
+      "url": "https://github.com/spinframework/spin-python-sdk/blob/a7945b83f7000936c23fe7bdc4ddea411b8059f2/README.md",
+      "rawUrl": "https://raw.githubusercontent.com/spinframework/spin-python-sdk/a7945b83f7000936c23fe7bdc4ddea411b8059f2/README.md",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "a7945b83f7000936c23fe7bdc4ddea411b8059f2",
+        "committedAt": "2026-09-21T14:39:55Z",
+        "path": "README.md",
+        "sha256": "281bc9a277a16ec04f4f01dd0a7654fac9bd37d2ecb31b0e526bb539f5521948"
+      },
+      "evidence": "Pins spin-sdk 5.0.0 and componentize-py 0.25.1 in the example; targets spin:up/http-trigger@4.1.0."
+    },
+    {
+      "id": "spin-python-world",
+      "kind": "pinned-source",
+      "publisher": "spinframework",
+      "title": "Exact Spin Python component interfaces",
+      "url": "https://github.com/spinframework/spin-python-sdk/blob/a7945b83f7000936c23fe7bdc4ddea411b8059f2/src/spin_sdk/wit/world.wit",
+      "rawUrl": "https://raw.githubusercontent.com/spinframework/spin-python-sdk/a7945b83f7000936c23fe7bdc4ddea411b8059f2/src/spin_sdk/wit/world.wit",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "a7945b83f7000936c23fe7bdc4ddea411b8059f2",
+        "committedAt": "2026-09-21T14:39:55Z",
+        "path": "src/spin_sdk/wit/world.wit",
+        "sha256": "5d42e4507a3a589ab3248ef0855219b58119aa01194bdaedb956a40b607b8eba"
+      },
+      "evidence": "Exports wasi:http/handler@0.3.0 and imports specified WASI and Spin interfaces; a host must implement the actual imported interface set."
+    },
+    {
+      "id": "componentize-py-contract",
+      "kind": "pinned-source",
+      "publisher": "bytecodealliance",
+      "title": "Python-to-component tool contract",
+      "url": "https://github.com/bytecodealliance/componentize-py/blob/9ff99dabc05a918a9875bad58b0ecb39cb90bb9a/README.md",
+      "rawUrl": "https://raw.githubusercontent.com/bytecodealliance/componentize-py/9ff99dabc05a918a9875bad58b0ecb39cb90bb9a/README.md",
+      "accessedOn": "2026-09-29",
+      "revision": {
+        "commit": "9ff99dabc05a918a9875bad58b0ecb39cb90bb9a",
+        "committedAt": "2026-09-21T18:12:15Z",
+        "path": "README.md",
+        "sha256": "22c7426a166da0b6de56d8db9b2d2b6d1e05e929d8be31974137a9eccad9ed6b"
+      },
+      "evidence": "Accepts interface definitions, a world, Python entry module and dependency paths; documents build-time import limitations."
+    },
+    {
+      "id": "cloudflare-python",
+      "kind": "official-documentation",
+      "publisher": "Cloudflare",
+      "title": "Python Workers",
+      "url": "https://developers.cloudflare.com/workers/languages/python/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Required python_workers flag and pywrangler development/deployment interface.",
+      "pageDateObserved": "2026-09-17"
+    },
+    {
+      "id": "cloudflare-python-lifecycle",
+      "kind": "official-documentation",
+      "publisher": "Cloudflare",
+      "title": "How Python Workers work",
+      "url": "https://developers.cloudflare.com/workers/languages/python/how-python-workers-work/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Python source plus dependencies; runtime-injected Pyodide, compatibility-date selection and deployment-time memory snapshots.",
+      "pageDateObserved": "2026-07-09"
+    },
+    {
+      "id": "cloudflare-packages",
+      "kind": "official-documentation",
+      "publisher": "Cloudflare",
+      "title": "Python packages",
+      "url": "https://developers.cloudflare.com/workers/languages/python/packages/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Pure and PyEmscripten packages and dependency bundling; no promise every Python package works.",
+      "pageDateObserved": "2026-09-18"
+    },
+    {
+      "id": "cloudflare-wasm",
+      "kind": "official-documentation",
+      "publisher": "Cloudflare",
+      "title": "WebAssembly runtime API",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/webassembly/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Imported precompiled modules, absent Worker threading API, experimental partial WASI.",
+      "pageDateObserved": "2026-04-23"
+    },
+    {
+      "id": "cloudflare-stdlib",
+      "kind": "official-documentation",
+      "publisher": "Cloudflare",
+      "title": "Python standard library",
+      "url": "https://developers.cloudflare.com/workers/languages/python/stdlib/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Excluded/nonfunctional operating-system modules and ephemeral in-memory files.",
+      "pageDateObserved": "2026-08-24"
+    },
+    {
+      "id": "cloudflare-limits",
+      "kind": "official-documentation",
+      "publisher": "Cloudflare",
+      "title": "Workers limits",
+      "url": "https://developers.cloudflare.com/workers/platform/limits/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Plan-specific CPU and resource limits; recheck before an experiment rather than treating documentation values as a benchmark.",
+      "pageDateObserved": "2026-09-05"
+    },
+    {
+      "id": "fastly-python-guide",
+      "kind": "official-documentation",
+      "publisher": "Fastly",
+      "title": "Python on Compute",
+      "url": "https://www.fastly.com/documentation/guides/compute/developer-guides/python/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Guide marked beta and tested with SDK 0.1.2 while listing 0.1.3; CLI build/serve/deploy contracts."
+    },
+    {
+      "id": "spin-4-1-release",
+      "kind": "official-documentation",
+      "publisher": "Spin project",
+      "title": "Announcing Spin v4.1",
+      "url": "https://spinframework.dev/blog/announcing-spin-4-1",
+      "accessedOn": "2026-09-29",
+      "evidence": "Announces final WASI 0.3.0, retained March release-candidate and Preview 2 support, and Wasmtime 48.",
+      "pageDateObserved": "2026-08-26"
+    },
+    {
+      "id": "spin-host-compatibility",
+      "kind": "official-documentation",
+      "publisher": "Spin project",
+      "title": "Writing Spin applications",
+      "url": "https://spinframework.dev/v4/writing-apps",
+      "accessedOn": "2026-09-29",
+      "evidence": "Some hosts still support Spin 3.x and require Preview 2 templates; CLI availability is not hosted-platform acceptance."
+    },
+    {
+      "id": "spin-manifest",
+      "kind": "official-documentation",
+      "publisher": "Spin project",
+      "title": "Spin application manifest",
+      "url": "https://spinframework.dev/v4/manifest-reference",
+      "accessedOn": "2026-09-29",
+      "evidence": "Declares component source, mounted files, allowed outbound hosts and storage capabilities."
+    },
+    {
+      "id": "spinkube-architecture",
+      "kind": "official-documentation",
+      "publisher": "SpinKube project",
+      "title": "SpinKube architecture",
+      "url": "https://www.spinkube.dev/docs/topics/architecture/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Operator, runtime-class manager and containerd-shim-spin provide Kubernetes hosting."
+    },
+    {
+      "id": "spinkube-matrix",
+      "kind": "official-documentation",
+      "publisher": "SpinKube project",
+      "title": "Executor compatibility matrices",
+      "url": "https://www.spinkube.dev/docs/install/compatibility-matrices/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Observed matrix maps shim v0.26.0 to Spin v4.1.0; deployment must verify installed executor versions."
+    },
+    {
+      "id": "spinkube-oci",
+      "kind": "official-documentation",
+      "publisher": "SpinKube project",
+      "title": "Introducing SpinKube",
+      "url": "https://www.spinkube.dev/blog/2024/03/13/introducing-spinkube/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Spin applications can be OCI artifacts without application operating-system layers.",
+      "pageDateObserved": "2024-03-13"
+    },
+    {
+      "id": "spinkube-spintainer",
+      "kind": "official-documentation",
+      "publisher": "SpinKube project",
+      "title": "Spintainer executor",
+      "url": "https://www.spinkube.dev/docs/misc/spintainer-executor/",
+      "accessedOn": "2026-09-29",
+      "evidence": "Alternative executor explicitly launches Spin in a container image."
+    }
+  ]
+}
