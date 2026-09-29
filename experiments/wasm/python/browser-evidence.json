@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-29T07:29:22.680700+00:00",
+  "method": "Final results are browser execution in Playwright Chromium against the exact exported artifact hashes. Earlier Codex in-app-browser and focused Playwright results are preserved as history; none are inferred from Node-only checks.",
+  "workerSha256": "ffc80803d5072f5e8833b8abb7bf9f94dcf5ea0c40a8ddd44ad68fe43e68b680",
+  "sharedChecks": [
+    "actual sys.version and emscripten platform",
+    "future import",
+    "UTF-8 source and output",
+    "arithmetic",
+    "JSON round trip",
+    "regex",
+    "math",
+    "virtual file write/read",
+    "separate stdout and stderr",
+    "exception exit 1",
+    "clean traceback at source line 1",
+    "package controls disabled for bare CPython"
+  ],
+  "runtimes": {
+    "2.7.18": {
+      "reportedPython": "2.7.18",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "38d3cde5405e3812a6c407c5142e04633b581c730dd6ec26da40a7f31f62b975",
+        "python.wasm": "dcad2db536078276c70b1a7d30d446ff29825abb30f60cd1b96cd0d1b79f75f1",
+        "python.data": "89e3c8e4ed1c001b438ed6c2d4cd7853067e20171635fb185dec1ce94d825655"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 2.7.18: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:02.106Z",
+        "durationMs": 669,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      },
+      "hardStop": "Stopped executing infinite loop; Run button re-enabled"
+    },
+    "3.0.1": {
+      "reportedPython": "3.0.1",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "71bdcc3d871c954f41d856ad68e1e80b1af6b2907a744ac689904a4c01ab7b9a",
+        "python.wasm": "276ab10b35ec3f305decdc829f4b248867e68620a858c98c9aaad44560f45ffa",
+        "python.data": "e4855b0905582d0803e84dba747345190aa3d412978862b1321e5eec281d0183"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.0.1: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:03.281Z",
+        "durationMs": 496,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.1.5": {
+      "reportedPython": "3.1.5",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "a8f4323e53b9ff90e9dc848efa526cb56b252e45150217047f5e2bd925607928",
+        "python.wasm": "bfeadd79197af2f15277146166ce43886c7f47c4f19cf1eddf4eadaeefd2b854",
+        "python.data": "1e0b5f77fde50121f38e853db17e07fa004eab7d0af93d2b557800e189dc7cad"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.1.5: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:08.811Z",
+        "durationMs": 646,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.2.6": {
+      "reportedPython": "3.2.6",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "e3678a3f4715680d807e7a507e877d97eb6cbf2b02998ca6e3c2830072fe7216",
+        "python.wasm": "563e46a6ff9a24d8276afdc4b9bb62eda9b12de33989f0cfa6e8bd95f32ed954",
+        "python.data": "a4f690f6a7a80cc87af03f7f25ad5cd9bdff41ebb06419680d5ee01190651c44"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.2.6: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:09.464Z",
+        "durationMs": 609,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.3.7": {
+      "reportedPython": "3.3.7",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "f1c9aab46eeaa5c833fd2f1fc442978c233221545488fe792a7633fc638767e8",
+        "python.wasm": "6b1372cf75ee4f4aaa01e81e2a96ec3f1623261e6befa467d5eb1f200ef0d386",
+        "python.data": "9142ad2c85f8af97e24a9670972aa1f73910b8dd31d75462356e16ac4688c392"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.3.7: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:07.998Z",
+        "durationMs": 802,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.4.10": {
+      "reportedPython": "3.4.10",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "79fccfde841d955a48a3964728e66e9da842a40e6a75b0da6dff706eed250369",
+        "python.wasm": "17f46fe260ce82e01bd51ec7f6b31f26fa6a9924d27262836ed90d0aaa8e38e2",
+        "python.data": "992883915cb6497de595931209a6943ece2283ebfc3ac214017be52657cb5307"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.4.10: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:03.497Z",
+        "durationMs": 699,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.5.10": {
+      "reportedPython": "3.5.10",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "a947a96a02b51b5e1f638e6823bacd3be9013859ad3a75cd9619e79babdf3015",
+        "python.wasm": "01545806b8e98e27a06d9c9a6881ea64a44654c35afb1cd6d19d43901dd40f68",
+        "python.data": "2fb81cee6941a41c783baad7c425b3b8a6228f12d5a3f9aa46d9b78d2b656023"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.5.10: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:04.202Z",
+        "durationMs": 763,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.6.15": {
+      "reportedPython": "3.6.15",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "f854f2b2897a9a2c72e7be4bb5b27ff8641120dd665c7ff0a8c842b1505a9d31",
+        "python.wasm": "6b52aa47b334a78771ac3806c6c416f9bc5cfcff0bde74f7d3f62ca69385f931",
+        "python.data": "c170a7b5f4a148c4666d1f0783c41dbc5c37c3ffc8f9989cebb21b038aca30aa"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.6.15: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:07.269Z",
+        "durationMs": 723,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.7.17": {
+      "reportedPython": "3.7.17",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "a80fd7e838f174e3832e2f6a4a1da80ad33e7066e3c33e61b3ff3182ddcfa968",
+        "python.wasm": "8c33ee521aa089736f615f08095e5d1562006e8927dbe751acfb77557424495c",
+        "python.data": "63bc00f4bcf2bd4397d15df76cf01cf991ad5fa661d92e5fa3e3e00b626bdd42"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.7.17: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:03.782Z",
+        "durationMs": 692,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.8.20": {
+      "reportedPython": "3.8.20",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "95e04254c221012d95affe26c7a688d2f74b5e4c0129903c3f08c015eeae0ded",
+        "python.wasm": "7517ec6405a59c9e1b4d3f3db6805d78987d0cbb40a4f71e910469ca0fca1041",
+        "python.data": "42f5fe5cd7e82eec7f46fb38a7fafbfda2ff956ddddd35ee2b5ffa28e5df27b7"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.8.20: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:04.481Z",
+        "durationMs": 740,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.9.25": {
+      "reportedPython": "3.9.25",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "2a2b3581358c992d97d0cf82af396e0678c5a6a9a1ea20cb7239f56b49aa7c6a",
+        "python.wasm": "5a04716d2463b805e6f55a69d83f8c35f554e8f7394c7281ca14872336c52e14",
+        "python.data": "93f67bd19ce55e8680beca7ed60a03f00f48ca41e009faa0bb80853686237f22"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.9.25: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:04.972Z",
+        "durationMs": 715,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.10.21": {
+      "reportedPython": "3.10.21",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "1177601bfb43e9477f8284765c91e61512ca36c53b76af6370ad8d5874e7d92d",
+        "python.wasm": "37caea6f176b43712e1788bcd3648d752cf426efd2598807bcef5f0268edae61",
+        "python.data": "392930d46d79b84444337d61be008eaaa12a984f96947b5d1fa39fe1e69a0f9b"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.10.21: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:02.783Z",
+        "durationMs": 708,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      }
+    },
+    "3.11.16": {
+      "reportedPython": "3.11.16",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "cd5a271fca7f57a1148bf59f6009207ebe3bf070e3a9259d68babb0941792598",
+        "python.wasm": "c2f1e776e542caf0a8ae1f465f820711f3572acb8510b9b842f2edbe0b83500a",
+        "python.data": "d295210e8aea984c3548f5d30e2a51ece87d316164f5c4a283122f825989ca33"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.11.16: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:05.227Z",
+        "durationMs": 2035,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      },
+      "sqlite": {
+        "exitCode": 0,
+        "version": "3.39.0",
+        "rows": [
+          [
+            "Python 3.0",
+            2008
+          ],
+          [
+            "Python 2.7",
+            2010
+          ]
+        ],
+        "stdout": "('Python 3.0', 2008)\n('Python 2.7', 2010)\nSQLite version: 3.39.0\n",
+        "stderr": "",
+        "method": "Actual output captured by final Playwright browser run"
+      }
+    },
+    "3.12.14": {
+      "reportedPython": "3.12.14",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "15b67645e3ee41fe2402a538f3c2ee6f74d25f88313c9e4433d98155e6572521",
+        "python.wasm": "65d1f2396e2d611e3f5e7f0c905d68861263eb4f91998604ddfa4cd653573c7e",
+        "python.data": "2d2404d7829fa1a739ff68f0c73b788ff81c66ea522debdca6b1c74b776387e5"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.12.14: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:07.305Z",
+        "durationMs": 2602,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      },
+      "sqlite": {
+        "exitCode": 0,
+        "version": "3.39.0",
+        "rows": [
+          [
+            "Python 3.0",
+            2008
+          ],
+          [
+            "Python 2.7",
+            2010
+          ]
+        ],
+        "stdout": "('Python 3.0', 2008)\n('Python 2.7', 2010)\nSQLite version: 3.39.0\n",
+        "stderr": "",
+        "method": "Actual output captured by final Playwright browser run"
+      }
+    },
+    "3.13.15": {
+      "reportedPython": "3.13.15",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "41fb07b16a03b163dfb3cc5e6c284be5cb8a53e45ec09fe413c94d3b9ae42aad",
+        "python.wasm": "207c15e4996c496588417ee26d4eb39410526456816c9473dfbe64397d2fae97",
+        "python.data": "0e70caf03852875e96ee1ec06c42101984700d6e20ef65b179339684b4484e8e"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.13.15: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:05.694Z",
+        "durationMs": 1604,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      },
+      "sqlite": {
+        "exitCode": 0,
+        "version": "3.39.0",
+        "rows": [
+          [
+            "Python 3.0",
+            2008
+          ],
+          [
+            "Python 2.7",
+            2010
+          ]
+        ],
+        "stdout": "('Python 3.0', 2008)\n('Python 2.7', 2010)\nSQLite version: 3.39.0\n",
+        "stderr": "",
+        "method": "Actual output captured by final Playwright browser run"
+      }
+    },
+    "3.14.7": {
+      "reportedPython": "3.14.7",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "27b0f63754f49d525b2b712680edf3303c28c779f168395eda6f7321f61ee50c",
+        "python.wasm": "cda1f57c2146c2418d7cc62ad0dd936e10d1cf8f579ead22e9dee35ed6f42ca5",
+        "python.data": "baa7a2c940bf9481e8c6ad8d656fe4bb1ca5abc67eb8cccf6c8cf81286cc2599"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.14.7: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:27:00.734Z",
+        "durationMs": 2541,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      },
+      "sqlite": {
+        "exitCode": 0,
+        "version": "3.39.0",
+        "rows": [
+          [
+            "Python 3.0",
+            2008
+          ],
+          [
+            "Python 2.7",
+            2010
+          ]
+        ],
+        "stdout": "('Python 3.0', 2008)\n('Python 2.7', 2010)\nSQLite version: 3.39.0\n",
+        "stderr": "",
+        "method": "Actual output captured by final Playwright browser run"
+      }
+    },
+    "3.15.0rc2": {
+      "reportedPython": "3.15.0rc2",
+      "platform": "emscripten",
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "artifactSha256": {
+        "python.mjs": "8987aa945bf815aba447996971a4f2e33b00704b1fc8a8cb877e60ffe3ebbf85",
+        "python.wasm": "5f204376e02fee78a3251ce92601f719bfd47bc9bc20b030314699e51dad0cf6",
+        "python.data": "c7e3199716b275e3b1ccfee063bf96d232192eb18173f23e7bfabfa81f1b175b"
+      },
+      "validation": {
+        "method": "Playwright Chromium acceptance of final exported artifacts",
+        "suite": "automatedBrowserSuite",
+        "testTitle": "CPython 3.15.0rc2: version, library, files, streams and exceptions",
+        "startTime": "2026-09-29T07:26:59.542Z",
+        "durationMs": 2556,
+        "outputEvidence": "Exact stdout/stderr and exception-status browser DOM assertions in tests/python-wasm.spec.js"
+      },
+      "sqlite": {
+        "exitCode": 0,
+        "version": "3.39.0",
+        "rows": [
+          [
+            "Python 3.0",
+            2008
+          ],
+          [
+            "Python 2.7",
+            2010
+          ]
+        ],
+        "stdout": "('Python 3.0', 2008)\n('Python 2.7', 2010)\nSQLite version: 3.39.0\n",
+        "stderr": "",
+        "method": "Actual output captured by final Playwright browser run"
+      },
+      "hardStop": "Final Playwright suite stopped an executing infinite loop and re-enabled Run",
+      "timeout": {
+        "configuredSeconds": 10,
+        "result": "Stopped: time limit reached.",
+        "recoveryExitCode": 0,
+        "recoveryStdout": "RECOVERED\n",
+        "method": "Final Playwright suite"
+      }
+    }
+  },
+  "pyodide": {
+    "distribution": "314.0.7",
+    "reportedPython": "3.14.2",
+    "checks": [
+      "hello and arithmetic",
+      "micropip snowballstemmer==3.0.1",
+      "package absence after disabling installation on next run",
+      "SQLite query (3.39.0)",
+      "JavaScript URL FFI",
+      "pyfetch local catalog and top-level await",
+      "Datasette 0.65.5 pinned graph JSON 200 / HTML 200 / missing page 404",
+      "hard stop",
+      "10-second timeout and recovery",
+      "UTF-8 partial stdout and stderr survive exceptions",
+      "Automatic import loader: NumPy2.4.6 compiled array reduction [3,5,7], then missing on fresh worker with loader disabled"
+    ],
+    "datasetteRegression": {
+      "exitCode": 0,
+      "elapsedSeconds": 2.9,
+      "jsonStatus": 200,
+      "htmlStatus": 200,
+      "htmlContainsFixture": true,
+      "missingStatus": 404
+    }
+  },
+  "automatedBrowserSuite": {
+    "command": "PLAYWRIGHT_JSON_OUTPUT_FILE=.playwright-artifacts/python-wasm-final.json PYTHON_WASM_TEST_PYODIDE=1 yarn playwright test --config playwright.python-wasm.config.js --workers=2 --reporter=line,json",
+    "playwright": "1.62.1",
+    "browser": "Chromium 151.0.7922.34 (Playwright revision 1234)",
+    "startTime": "2026-09-29T07:26:55.280Z",
+    "passed": 31,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "elapsedSeconds": 27.487431,
+    "localVersions": [
+      "2.7.18",
+      "3.0.1",
+      "3.1.5",
+      "3.2.6",
+      "3.3.7",
+      "3.4.10",
+      "3.5.10",
+      "3.6.15",
+      "3.7.17",
+      "3.8.20",
+      "3.9.25",
+      "3.10.21",
+      "3.11.16",
+      "3.12.14",
+      "3.13.15",
+      "3.14.7",
+      "3.15.0rc2"
+    ],
+    "artifactHashesUnchangedAcrossRun": true,
+    "testSha256": "22e4a5fc01c70b78c875ad0a7b80d3fcb170e8412aad73562394e60ef0d3f536",
+    "configSha256": "b6087cb1a8444066663b7bbfe6dc498df543529b37f0ddd789eb13b143807c49"
+  },
+  "priorArtifactValidations": [
+    {
+      "version": "3.4.10",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "a6eda161b8697dfe03ee951727b5fd0a5c02468774d2c5e373ed9ae632d076ff",
+        "python.wasm": "a2b29fb6a914b0022ea121d1b57bece871f962b87c2baeb1d0400037781f65b6",
+        "python.data": "992883915cb6497de595931209a6943ece2283ebfc3ac214017be52657cb5307"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "3.5.10",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "d46a0fced8aeb120a6dd10ef1d73bcd86f33bbb4682a3ca3efbd81872f5ba371",
+        "python.wasm": "30d12549d5aecfa758474e45286576077c55680c1045f197f67f82f84c3c72b6",
+        "python.data": "2fb81cee6941a41c783baad7c425b3b8a6228f12d5a3f9aa46d9b78d2b656023"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "3.6.15",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "d78339b62857cd7ade12aed453a87fcb51b0cabb4499cfd8d2f7d7204a5094d8",
+        "python.wasm": "6b52aa47b334a78771ac3806c6c416f9bc5cfcff0bde74f7d3f62ca69385f931",
+        "python.data": "c170a7b5f4a148c4666d1f0783c41dbc5c37c3ffc8f9989cebb21b038aca30aa"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "3.7.17",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "2bb4e496550b87b6e267d87f87670d093aaad80d7c7ec84d60548754267d28d9",
+        "python.wasm": "710f4adca0ce66bbd86f633d4881ba64c1f9244cd8b4918972f3e30cec2f0963",
+        "python.data": "63bc00f4bcf2bd4397d15df76cf01cf991ad5fa661d92e5fa3e3e00b626bdd42"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "3.8.20",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "5c4fb67376f3deaa68c77a5393fd4b269165cfc51b6527f1acad1b7b6fbc1514",
+        "python.wasm": "f83751732f56cb8bd1827b5196ef1608e0860aaa781d55c8c9210edc5ea578ea",
+        "python.data": "42f5fe5cd7e82eec7f46fb38a7fafbfda2ff956ddddd35ee2b5ffa28e5df27b7"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "3.9.25",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "d83066d957f062eca00e44aa0014832f8a732f475608c653d7718c266c903151",
+        "python.wasm": "f9da3ac1bca982b5c03c920243f69efc71e65ef41750611ac692e1bd7661d782",
+        "python.data": "93f67bd19ce55e8680beca7ed60a03f00f48ca41e009faa0bb80853686237f22"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "3.10.21",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "2aa9ff4860d979efe49fb0512aace1e20ff083211d9dd931ae343432faad439f",
+        "python.wasm": "4b2d811ba0f06f447faca9b8236adbcf9a2b2cd22efa181d0d42c8d7c3c4a743",
+        "python.data": "392930d46d79b84444337d61be008eaaa12a984f96947b5d1fa39fe1e69a0f9b"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      }
+    },
+    {
+      "version": "2.7.18",
+      "method": "Earlier Codex in-app-browser UI acceptance of development artifacts",
+      "artifactSha256": {
+        "python.mjs": "93ce4aadb8b1f1b53e579d165fb980c92478b7bcfe98cbdff92832e6322474e6",
+        "python.wasm": "dcad2db536078276c70b1a7d30d446ff29825abb30f60cd1b96cd0d1b79f75f1",
+        "python.data": "89e3c8e4ed1c001b438ed6c2d4cd7853067e20171635fb185dec1ce94d825655"
+      },
+      "smoke": {
+        "exitCode": 0,
+        "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n"
+      },
+      "exception": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+      },
+      "hardStop": "Stopped executing infinite loop; Run button re-enabled"
+    },
+    {
+      "version": "3.0.1",
+      "method": "Earlier browser validation before final artifact replacement",
+      "record": {
+        "reportedPython": "3.0.1",
+        "platform": "emscripten",
+        "smoke": {
+          "exitCode": 0,
+          "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+          "stderr": "WASM_STDERR\n"
+        },
+        "exception": {
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+        },
+        "artifactSha256": {
+          "python.mjs": "aa31799b043f874b6074498809000e83914592ee6840f8f1bbec57d9ed2969b5",
+          "python.wasm": "276ab10b35ec3f305decdc829f4b248867e68620a858c98c9aaad44560f45ffa",
+          "python.data": "e4855b0905582d0803e84dba747345190aa3d412978862b1321e5eec281d0183"
+        }
+      }
+    },
+    {
+      "version": "3.11.16",
+      "method": "Earlier browser validation before final artifact replacement",
+      "record": {
+        "reportedPython": "3.11.16",
+        "platform": "emscripten",
+        "smoke": {
+          "exitCode": 0,
+          "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+          "stderr": "WASM_STDERR\n"
+        },
+        "exception": {
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+        },
+        "artifactSha256": {
+          "python.mjs": "3a73743175f650befce60ac0cfb6a51674d52f7a6a2d4f5ac7e76070acc5ad1a",
+          "python.wasm": "c2f1e776e542caf0a8ae1f465f820711f3572acb8510b9b842f2edbe0b83500a",
+          "python.data": "d7c6a38c27471949c5b4c548870035cb0d23cb4c4eaf1227805b7e327b0576bf"
+        },
+        "sqlite": {
+          "exitCode": 0,
+          "version": "3.39.0",
+          "rows": [
+            [
+              "Python 3.0",
+              2008
+            ],
+            [
+              "Python 2.7",
+              2010
+            ]
+          ]
+        },
+        "validation": {
+          "method": "Playwright Chromium full-library browser acceptance; Codex in-app-browser SQLite application query",
+          "startTime": "2026-09-29T07:11:49.912Z",
+          "testSha256": "84b92b0ce6badc91a0ce1198c98750f919b624e7dedafc47e3f61b6468c28bcf",
+          "outputEvidence": "Exact browser DOM assertions in tests/python-wasm.spec.js; SQLite stdout observed separately"
+        }
+      }
+    },
+    {
+      "version": "3.12.14",
+      "method": "Earlier browser validation before final artifact replacement",
+      "record": {
+        "reportedPython": "3.12.14",
+        "platform": "emscripten",
+        "smoke": {
+          "exitCode": 0,
+          "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+          "stderr": "WASM_STDERR\n"
+        },
+        "exception": {
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+        },
+        "artifactSha256": {
+          "python.mjs": "78a2664e93dc01255bfc5ec9fe28907ccbb5c5596bae53588fd626e98aa285b2",
+          "python.wasm": "65d1f2396e2d611e3f5e7f0c905d68861263eb4f91998604ddfa4cd653573c7e",
+          "python.data": "f06eb3395c0a6ce0d8a6ae817205366d13f0c8fe2769bf5dd5d298007183297e"
+        },
+        "sqlite": {
+          "exitCode": 0,
+          "version": "3.39.0",
+          "rows": [
+            [
+              "Python 3.0",
+              2008
+            ],
+            [
+              "Python 2.7",
+              2010
+            ]
+          ]
+        },
+        "validation": {
+          "method": "Playwright Chromium full-library browser acceptance; Codex in-app-browser SQLite application query",
+          "startTime": "2026-09-29T07:12:23.875Z",
+          "testSha256": "84b92b0ce6badc91a0ce1198c98750f919b624e7dedafc47e3f61b6468c28bcf",
+          "outputEvidence": "Exact browser DOM assertions in tests/python-wasm.spec.js; SQLite stdout observed separately"
+        }
+      }
+    },
+    {
+      "version": "3.13.15",
+      "method": "Earlier browser validation before final artifact replacement",
+      "record": {
+        "reportedPython": "3.13.15",
+        "platform": "emscripten",
+        "smoke": {
+          "exitCode": 0,
+          "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+          "stderr": "WASM_STDERR\n"
+        },
+        "exception": {
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+        },
+        "artifactSha256": {
+          "python.mjs": "ef08e9aa8cc68e0b0aef3d9178d61b41ad8080e8f5e862a47b4d1333b9310912",
+          "python.wasm": "207c15e4996c496588417ee26d4eb39410526456816c9473dfbe64397d2fae97",
+          "python.data": "2361cd4cabf51c187eba5a06f90c4dc482a3a48c9050732c9a4addf2a6d01ac9"
+        },
+        "sqlite": {
+          "exitCode": 0,
+          "version": "3.39.0",
+          "rows": [
+            [
+              "Python 3.0",
+              2008
+            ],
+            [
+              "Python 2.7",
+              2010
+            ]
+          ]
+        },
+        "validation": {
+          "method": "Playwright Chromium full-library browser acceptance; Codex in-app-browser SQLite application query",
+          "startTime": "2026-09-29T07:12:23.875Z",
+          "testSha256": "84b92b0ce6badc91a0ce1198c98750f919b624e7dedafc47e3f61b6468c28bcf",
+          "outputEvidence": "Exact browser DOM assertions in tests/python-wasm.spec.js; SQLite stdout observed separately"
+        }
+      }
+    },
+    {
+      "version": "3.14.7",
+      "method": "Earlier browser validation before final artifact replacement",
+      "record": {
+        "reportedPython": "3.14.7",
+        "platform": "emscripten",
+        "smoke": {
+          "exitCode": 0,
+          "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+          "stderr": "WASM_STDERR\n"
+        },
+        "exception": {
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+        },
+        "artifactSha256": {
+          "python.mjs": "31f7df55b26e747bef0dd945a74d0a2e2136586f6f295be2e86f0d898fc2a378",
+          "python.wasm": "cda1f57c2146c2418d7cc62ad0dd936e10d1cf8f579ead22e9dee35ed6f42ca5",
+          "python.data": "e2f62b4ea9682b8ad128a0f010acdc826ba6a2a4d5e207b7b49d1ab403f6979e"
+        },
+        "sqlite": {
+          "exitCode": 0,
+          "version": "3.39.0",
+          "rows": [
+            [
+              "Python 3.0",
+              2008
+            ],
+            [
+              "Python 2.7",
+              2010
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "version": "3.15.0rc2",
+      "method": "Earlier browser validation before final artifact replacement",
+      "record": {
+        "reportedPython": "3.15.0rc2",
+        "platform": "emscripten",
+        "smoke": {
+          "exitCode": 0,
+          "stdout": "WASM_STDOUT 285\nUnicode: café\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+          "stderr": "WASM_STDERR\n"
+        },
+        "exception": {
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<playground>\", line 1, in <module>\nRuntimeError: WASM_EXPECTED_EXCEPTION\n"
+        },
+        "artifactSha256": {
+          "python.mjs": "45ed67274ea13ab25605a688b66253d5e19b964cabd7f6b1df7dbe89d28459cc",
+          "python.wasm": "5f204376e02fee78a3251ce92601f719bfd47bc9bc20b030314699e51dad0cf6",
+          "python.data": "fd28e1a5fabd03c007aaadfb3339372e5d25c11b72d0cda86ce890ccaaf07812"
+        },
+        "sqlite": {
+          "exitCode": 0,
+          "version": "3.39.0",
+          "rows": [
+            [
+              "Python 3.0",
+              2008
+            ],
+            [
+              "Python 2.7",
+              2010
+            ]
+          ]
+        },
+        "hardStop": "Stopped executing infinite loop; Run button re-enabled",
+        "stdin": "EOF confirmed",
+        "timeout": {
+          "configuredSeconds": 10,
+          "observedSeconds": 10.01,
+          "recoveryExitCode": 0,
+          "recoveryStdout": "RECOVERED_AFTER_TIMEOUT\n",
+          "recoveryStderr": ""
+        }
+      }
+    }
+  ],
+  "pythonInfo": {
+    "method": "Final Playwright Chromium browser suite",
+    "runtimes": [
+      "2.7.18",
+      "3.0.1",
+      "3.11.16",
+      "3.12.14",
+      "3.13.15",
+      "3.14.7",
+      "3.15.0rc2",
+      "Pyodide 314.0.7 / Python 3.14.2"
+    ],
+    "sourceSha256": "68633d1cf0561aec3ff07731cd4ec2f083f6bc894ead8a3277fcdd4da0429b01",
+    "allPointerBits": 32,
+    "requiredTargetMetadata": {
+      "3.11.16": {
+        "status": "available",
+        "SIZEOF_VOID_P": 4
+      },
+      "3.12.14": {
+        "status": "available",
+        "SIZEOF_VOID_P": 4
+      },
+      "3.13.15": {
+        "status": "available",
+        "SIZEOF_VOID_P": 4
+      },
+      "3.14.7": {
+        "status": "available",
+        "SIZEOF_VOID_P": 4
+      },
+      "3.15.0rc2": {
+        "status": "available",
+        "SIZEOF_VOID_P": 4
+      }
+    },
+    "allExitCodes": 0,
+    "allStderr": "",
+    "note": "Earlier manual Unicode/encoding observations, including the now-fixed missing 3.15 target metadata, are preserved separately."
+  },
+  "priorAutomatedBrowserSuites": [
+    {
+      "command": "PYTHON_WASM_TEST_PYODIDE=1 yarn playwright test --config playwright.python-wasm.config.js --workers=2 --reporter=line --grep-invert 'CPython 3\\.(11|13)'",
+      "playwright": "1.62.1",
+      "browser": "Chromium 151.0.7922.34 (Playwright revision 1234)",
+      "passed": 15,
+      "failed": 0,
+      "elapsedSeconds": 17.4,
+      "testSha256": "84b92b0ce6badc91a0ce1198c98750f919b624e7dedafc47e3f61b6468c28bcf",
+      "configSha256": "b6087cb1a8444066663b7bbfe6dc498df543529b37f0ddd789eb13b143807c49",
+      "localVersions": [
+        "2.7.18",
+        "3.0.1",
+        "3.4.10",
+        "3.5.10",
+        "3.7.17",
+        "3.8.20",
+        "3.9.25",
+        "3.10.21",
+        "3.14.7",
+        "3.15.0rc2"
+      ]
+    },
+    {
+      "command": "PLAYWRIGHT_JSON_OUTPUT_FILE=.playwright-artifacts/python-wasm-final-seven.json yarn playwright test --config playwright.python-wasm.config.js --workers=2 --reporter=line,json --grep 'CPython 3\\.(4|5|6|7|8|9|10)\\.'",
+      "method": "Playwright 1.62.1 Chromium 151.0.7922.34; exact stdout/stderr browser DOM assertions plus version, capabilities and exception status",
+      "startTime": "2026-09-29T07:10:33.123Z",
+      "passed": 7,
+      "failed": 0,
+      "elapsedSeconds": 4.315144,
+      "localVersions": [
+        "3.4.10",
+        "3.5.10",
+        "3.6.15",
+        "3.7.17",
+        "3.8.20",
+        "3.9.25",
+        "3.10.21"
+      ],
+      "testSha256": "84b92b0ce6badc91a0ce1198c98750f919b624e7dedafc47e3f61b6468c28bcf"
+    }
+  ],
+  "sourceSha256": {
+    "experiments/wasm/python/worker.mjs": "ffc80803d5072f5e8833b8abb7bf9f94dcf5ea0c40a8ddd44ad68fe43e68b680",
+    "experiments/wasm/python/playground.mjs": "e5fd39938b2437e90610a4e069b5edb87f1fcc279c021ecfa6a2e4bda520c392",
+    "experiments/wasm/python/examples/python-info.py": "68633d1cf0561aec3ff07731cd4ec2f083f6bc894ead8a3277fcdd4da0429b01",
+    "experiments/wasm/python/examples/datasette.py": "d71e3264f047bbd919ccda0c6a06c35252a1d883046db08fc6fc9719a4b7145d",
+    "experiments/wasm/python/examples/datasette-requirements.txt": "cefca4079776860ce3811cf26eb2c1b4543cfb9349cb8f31d233033d0ba0c59c",
+    "tests/python-wasm.spec.js": "22e4a5fc01c70b78c875ad0a7b80d3fcb170e8412aad73562394e60ef0d3f536",
+    "playwright.python-wasm.config.js": "b6087cb1a8444066663b7bbfe6dc498df543529b37f0ddd789eb13b143807c49"
+  },
+  "priorPythonInfoObservations": [
+    {
+      "runtimes": [
+        "2.7.18",
+        "3.0.1",
+        "3.15.0rc2",
+        "Pyodide314.0.7 / Python3.14.2"
+      ],
+      "method": "Playwright focused suite 4/4 passed; fields inspected separately in Codex in-app-browser",
+      "sourceSha256": "68633d1cf0561aec3ff07731cd4ec2f083f6bc894ead8a3277fcdd4da0429b01",
+      "allPointerBits": 32,
+      "allByteOrder": "little",
+      "unicode": {
+        "2.7.18": {
+          "maxunicode": "0xffff",
+          "astralLength": 2
+        },
+        "3.0.1": {
+          "maxunicode": "0xffff",
+          "astralLength": 2
+        },
+        "3.15.0rc2": {
+          "maxunicode": "0x10ffff",
+          "astralLength": 1
+        },
+        "Pyodide314.0.7": {
+          "maxunicode": "0x10ffff",
+          "astralLength": 1
+        }
+      },
+      "metadataAtObservation": {
+        "2.7.18": "available",
+        "3.0.1": "unavailable: sysconfig module missing",
+        "3.15.0rc2": "unavailable: _sysconfigdata__emscripten_wasm32-emscripten missing",
+        "Pyodide314.0.7": "available"
+      },
+      "exitCode": 0,
+      "stderr": ""
+    }
+  ]
+}

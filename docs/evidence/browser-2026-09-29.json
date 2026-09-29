@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "c4e3cc14550e6f6c43f6b1cffe6d7ea48aa4fe15",
+  "command": "PYTHON_WASM_TEST_PYODIDE=1 PYTHON_WASM_PORT=8130 PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-suite.json yarn test:e2e --reporter=json",
+  "playwrightVersion": "1.62.1",
+  "browser": "Chromium",
+  "stats": {
+    "startTime": "2026-09-29T10:47:35.669Z",
+    "duration": 52537.83,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceSha256": {
+    "tests/python-wasm.spec.js": "f495461dbb9d1efaf078c879609ba08924d979faf322f34fbbb4ea1453023791",
+    "playwright.config.cjs": "23085e750b8d452f288b1a23af88f82b5510fb042562001b75c720c138b90108",
+    "serve.py": "82b64263cee3bdfebf1d7952d87e77516d2083334e1fde071b3c1667b9b0a8d4",
+    "experiments/wasm/python/index.html": "ef903f520a97c29adcba5f72cfdf3931b09adcd5fc868f4567cfdc66903c0046",
+    "experiments/wasm/python/playground.mjs": "f320a50169703c33758cb20d486b4a572b8c16ec5d1d1594f7281cfe4741df62",
+    "experiments/wasm/python/worker.mjs": "4bed887bac7dac75dce35ee5d428e0bbcfea44d604b6be196e46b0f8786652f5",
+    "experiments/wasm/python/runtimes.json": "a878455d3bba140fb24f0024a3aab9e3549bbc599773055ea51fc62d9169f31b",
+    "experiments/wasm/python/examples/datasette.py": "10a0219f75926b765d512afc6b437c6d25279ca3d3e92810181fd90513e4b666",
+    "experiments/wasm/python/examples/datasette-requirements.txt": "cefca4079776860ce3811cf26eb2c1b4543cfb9349cb8f31d233033d0ba0c59c",
+    "experiments/wasm/python/examples/python-info.py": "68633d1cf0561aec3ff07731cd4ec2f083f6bc894ead8a3277fcdd4da0429b01"
+  },
+  "runtimes": [
+    {
+      "version": "2.7.18",
+      "files": {
+        "python.mjs": "38d3cde5405e3812a6c407c5142e04633b581c730dd6ec26da40a7f31f62b975",
+        "python.wasm": "dcad2db536078276c70b1a7d30d446ff29825abb30f60cd1b96cd0d1b79f75f1",
+        "python.data": "89e3c8e4ed1c001b438ed6c2d4cd7853067e20171635fb185dec1ce94d825655"
+      }
+    },
+    {
+      "version": "3.0.1",
+      "files": {
+        "python.mjs": "71bdcc3d871c954f41d856ad68e1e80b1af6b2907a744ac689904a4c01ab7b9a",
+        "python.wasm": "276ab10b35ec3f305decdc829f4b248867e68620a858c98c9aaad44560f45ffa",
+        "python.data": "e4855b0905582d0803e84dba747345190aa3d412978862b1321e5eec281d0183"
+      }
+    },
+    {
+      "version": "3.1.5",
+      "files": {
+        "python.mjs": "a8f4323e53b9ff90e9dc848efa526cb56b252e45150217047f5e2bd925607928",
+        "python.wasm": "bfeadd79197af2f15277146166ce43886c7f47c4f19cf1eddf4eadaeefd2b854",
+        "python.data": "1e0b5f77fde50121f38e853db17e07fa004eab7d0af93d2b557800e189dc7cad"
+      }
+    },
+    {
+      "version": "3.10.21",
+      "files": {
+        "python.mjs": "1177601bfb43e9477f8284765c91e61512ca36c53b76af6370ad8d5874e7d92d",
+        "python.wasm": "37caea6f176b43712e1788bcd3648d752cf426efd2598807bcef5f0268edae61",
+        "python.data": "392930d46d79b84444337d61be008eaaa12a984f96947b5d1fa39fe1e69a0f9b"
+      }
+    },
+    {
+      "version": "3.11.16",
+      "files": {
+        "python.mjs": "cd5a271fca7f57a1148bf59f6009207ebe3bf070e3a9259d68babb0941792598",
+        "python.wasm": "c2f1e776e542caf0a8ae1f465f820711f3572acb8510b9b842f2edbe0b83500a",
+        "python.data": "d295210e8aea984c3548f5d30e2a51ece87d316164f5c4a283122f825989ca33"
+      }
+    },
+    {
+      "version": "3.12.14",
+      "files": {
+        "python.mjs": "15b67645e3ee41fe2402a538f3c2ee6f74d25f88313c9e4433d98155e6572521",
+        "python.wasm": "65d1f2396e2d611e3f5e7f0c905d68861263eb4f91998604ddfa4cd653573c7e",
+        "python.data": "2d2404d7829fa1a739ff68f0c73b788ff81c66ea522debdca6b1c74b776387e5"
+      }
+    },
+    {
+      "version": "3.13.15",
+      "files": {
+        "python.mjs": "41fb07b16a03b163dfb3cc5e6c284be5cb8a53e45ec09fe413c94d3b9ae42aad",
+        "python.wasm": "207c15e4996c496588417ee26d4eb39410526456816c9473dfbe64397d2fae97",
+        "python.data": "0e70caf03852875e96ee1ec06c42101984700d6e20ef65b179339684b4484e8e"
+      }
+    },
+    {
+      "version": "3.14.7",
+      "files": {
+        "python.mjs": "27b0f63754f49d525b2b712680edf3303c28c779f168395eda6f7321f61ee50c",
+        "python.wasm": "cda1f57c2146c2418d7cc62ad0dd936e10d1cf8f579ead22e9dee35ed6f42ca5",
+        "python.data": "baa7a2c940bf9481e8c6ad8d656fe4bb1ca5abc67eb8cccf6c8cf81286cc2599"
+      }
+    },
+    {
+      "version": "3.15.0rc2",
+      "files": {
+        "python.mjs": "8987aa945bf815aba447996971a4f2e33b00704b1fc8a8cb877e60ffe3ebbf85",
+        "python.wasm": "5f204376e02fee78a3251ce92601f719bfd47bc9bc20b030314699e51dad0cf6",
+        "python.data": "c7e3199716b275e3b1ccfee063bf96d232192eb18173f23e7bfabfa81f1b175b"
+      }
+    },
+    {
+      "version": "3.2.6",
+      "files": {
+        "python.mjs": "e3678a3f4715680d807e7a507e877d97eb6cbf2b02998ca6e3c2830072fe7216",
+        "python.wasm": "563e46a6ff9a24d8276afdc4b9bb62eda9b12de33989f0cfa6e8bd95f32ed954",
+        "python.data": "a4f690f6a7a80cc87af03f7f25ad5cd9bdff41ebb06419680d5ee01190651c44"
+      }
+    },
+    {
+      "version": "3.3.7",
+      "files": {
+        "python.mjs": "f1c9aab46eeaa5c833fd2f1fc442978c233221545488fe792a7633fc638767e8",
+        "python.wasm": "6b1372cf75ee4f4aaa01e81e2a96ec3f1623261e6befa467d5eb1f200ef0d386",
+        "python.data": "9142ad2c85f8af97e24a9670972aa1f73910b8dd31d75462356e16ac4688c392"
+      }
+    },
+    {
+      "version": "3.4.10",
+      "files": {
+        "python.mjs": "79fccfde841d955a48a3964728e66e9da842a40e6a75b0da6dff706eed250369",
+        "python.wasm": "17f46fe260ce82e01bd51ec7f6b31f26fa6a9924d27262836ed90d0aaa8e38e2",
+        "python.data": "992883915cb6497de595931209a6943ece2283ebfc3ac214017be52657cb5307"
+      }
+    },
+    {
+      "version": "3.5.10",
+      "files": {
+        "python.mjs": "a947a96a02b51b5e1f638e6823bacd3be9013859ad3a75cd9619e79babdf3015",
+        "python.wasm": "01545806b8e98e27a06d9c9a6881ea64a44654c35afb1cd6d19d43901dd40f68",
+        "python.data": "2fb81cee6941a41c783baad7c425b3b8a6228f12d5a3f9aa46d9b78d2b656023"
+      }
+    },
+    {
+      "version": "3.6.15",
+      "files": {
+        "python.mjs": "f854f2b2897a9a2c72e7be4bb5b27ff8641120dd665c7ff0a8c842b1505a9d31",
+        "python.wasm": "6b52aa47b334a78771ac3806c6c416f9bc5cfcff0bde74f7d3f62ca69385f931",
+        "python.data": "c170a7b5f4a148c4666d1f0783c41dbc5c37c3ffc8f9989cebb21b038aca30aa"
+      }
+    },
+    {
+      "version": "3.7.17",
+      "files": {
+        "python.mjs": "a80fd7e838f174e3832e2f6a4a1da80ad33e7066e3c33e61b3ff3182ddcfa968",
+        "python.wasm": "8c33ee521aa089736f615f08095e5d1562006e8927dbe751acfb77557424495c",
+        "python.data": "63bc00f4bcf2bd4397d15df76cf01cf991ad5fa661d92e5fa3e3e00b626bdd42"
+      }
+    },
+    {
+      "version": "3.8.20",
+      "files": {
+        "python.mjs": "95e04254c221012d95affe26c7a688d2f74b5e4c0129903c3f08c015eeae0ded",
+        "python.wasm": "7517ec6405a59c9e1b4d3f3db6805d78987d0cbb40a4f71e910469ca0fca1041",
+        "python.data": "42f5fe5cd7e82eec7f46fb38a7fafbfda2ff956ddddd35ee2b5ffa28e5df27b7"
+      }
+    },
+    {
+      "version": "3.9.25",
+      "files": {
+        "python.mjs": "2a2b3581358c992d97d0cf82af396e0678c5a6a9a1ea20cb7239f56b49aa7c6a",
+        "python.wasm": "5a04716d2463b805e6f55a69d83f8c35f554e8f7394c7281ca14872336c52e14",
+        "python.data": "93f67bd19ce55e8680beca7ed60a03f00f48ca41e009faa0bb80853686237f22"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "name": "version selector orders local CPython builds and separates Pyodide",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 436
+        }
+      ]
+    },
+    {
+      "name": "clean checkout loads the baseline without a local runtime catalog",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 128
+        }
+      ]
+    },
+    {
+      "name": "CPython 2.7.18: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 464
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.0.1: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 385
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.11.16: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1007
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.12.14: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1023
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.13.15: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1127
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.14.7: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1073
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.15.0rc2: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1121
+        }
+      ]
+    },
+    {
+      "name": "Pyodide 314.0.7 \u00b7 CDN: Python info survives missing optional metadata",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2031
+        }
+      ]
+    },
+    {
+      "name": "CPython 2.7.18: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 743
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.0.1: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 700
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.1.5: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 644
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.10.21: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1292
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.11.16: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1229
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.12.14: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1370
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.13.15: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2346
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.14.7: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3001
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.15.0rc2: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1867
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.2.6: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 737
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.3.7: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 818
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.4.10: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 836
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.5.10: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 897
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.6.15: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 938
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.7.17: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 929
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.8.20: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 911
+        }
+      ]
+    },
+    {
+      "name": "CPython 3.9.25: version, library, files, streams and exceptions",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 765
+        }
+      ]
+    },
+    {
+      "name": "worker stop and time limit terminate Python loops",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 11065
+        }
+      ]
+    },
+    {
+      "name": "Pyodide optional micropip installs a pure Python wheel",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3309
+        }
+      ]
+    },
+    {
+      "name": "Pyodide runs the pinned Datasette application",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3509
+        }
+      ]
+    },
+    {
+      "name": "Pyodide automatic import loading enables a compiled NumPy package",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3294
+        }
+      ]
+    },
+    {
+      "name": "Pyodide flushes partial output before an exception ends its worker",
+      "outcome": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1408
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "All manifest-declared local files were hash-verified after the test run.",
+    "This is a summary of the Playwright JSON report; selected tests are not the full CPython regression suite."
+  ]
+}
