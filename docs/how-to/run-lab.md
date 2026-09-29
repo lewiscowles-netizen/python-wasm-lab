@@ -38,7 +38,7 @@ Then open `http://127.0.0.1:8130/experiments/wasm/python/`. The launcher serves 
 
 ## Run without imported builds
 
-On a fresh clone, skip the import and start the server. Choose the Pyodide comparison from the tracked baseline catalog. Running it downloads the interpreter from a content delivery network, so internet access is required. For local CPython, import its completed bundles and refresh the page. See [package and application boundaries](../explanation/packages-and-applications.md) before planning offline use.
+On a fresh clone, skip the import and start the server. Choose the Pyodide comparison from the tracked baseline catalog. Running it downloads the interpreter from a content delivery network, so internet access is required. For local CPython, import its completed bundles and refresh the page. Follow [closed-network deployment](deploy-offline.md) when internet access is unavailable.
 
 ## Resolve startup problems
 
