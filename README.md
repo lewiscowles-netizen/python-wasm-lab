@@ -12,6 +12,8 @@ A browser playground for comparing CPython releases and Pyodide, with editable e
 | Understand the controls and worker messages | [Playground interface](experiments/wasm/python/README.md) |
 | Choose between runtime approaches | [Runtime alternatives](docs/explanation/runtime-alternatives.md) |
 | Understand package and application support | [Packages and applications](docs/explanation/packages-and-applications.md) |
+| Bring your own project | [Project integration guide](docs/how-to/import-project.md) |
+| Run inside a closed network | [Internal deployment](docs/how-to/deploy-offline.md) and [intranet debugging](docs/how-to/debug-intranet.md) |
 | Rebuild, verify or deploy | [Documentation index](docs/README.md) |
 | Assess what has actually passed | [Validation reference](docs/reference/validation.md) |
 | Identify upstream sources and commits | [Source provenance appendix](appendix.md) |
