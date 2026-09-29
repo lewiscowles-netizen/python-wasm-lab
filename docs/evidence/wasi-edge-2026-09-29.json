@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-29T16:33:05.156443+00:00",
+  "host": "macOS-26.7-arm64-arm-64bit-Mach-O",
+  "nativePython": "3.14.5 (main, May 18 2026, 17:55:37) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "tools": {
+    "componentizePy": "0.25.1",
+    "wasmtime": "49.0.1",
+    "wasmTools": "1.259.0"
+  },
+  "requestedWorld": "wasi:http/proxy@0.2.0",
+  "witSourceCommit": "2a53e46a0083619f2c85ac5f20abe4132cda4b88",
+  "assets": [
+    {
+      "filename": "componentize_py-0.25.1-cp39-abi3-macosx_11_0_arm64.whl",
+      "url": "https://files.pythonhosted.org/packages/4b/9c/f444240899a9b43c60b808d0ece5dff8f3dc6831aa119a1d8eb28d952bad/componentize_py-0.25.1-cp39-abi3-macosx_11_0_arm64.whl",
+      "sha256": "a556991534cc496207a9d2ca733c4b0f17ed38ef56a8d6b5f1847fdf1225dd1b",
+      "bytes": 15379697
+    },
+    {
+      "filename": "wasmtime-v49.0.1-aarch64-macos.tar.xz",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v49.0.1/wasmtime-v49.0.1-aarch64-macos.tar.xz",
+      "sha256": "93dde14d4efb20046e5af75517ac6a7f2246f6c2370fecff8f68839d4a9028f7",
+      "bytes": 9566152
+    },
+    {
+      "filename": "wasm-tools-1.259.0-aarch64-macos.tar.gz",
+      "url": "https://github.com/bytecodealliance/wasm-tools/releases/download/v1.259.0/wasm-tools-1.259.0-aarch64-macos.tar.gz",
+      "sha256": "b662d939220b2c49ea9f1d81a19776e47d72bb5ba580f08107c7dc865e1f8c66",
+      "bytes": 5121483
+    },
+    {
+      "url": "https://codeload.github.com/bytecodealliance/componentize-py/tar.gz/2a53e46a0083619f2c85ac5f20abe4132cda4b88",
+      "commit": "2a53e46a0083619f2c85ac5f20abe4132cda4b88",
+      "sha256": "1921ac119ec843d270167eb87ebcf895cabf41d8ed7dbc2e4b4f72c11813f30b",
+      "bytes": 204413,
+      "filename": "componentize-py-source.tar.gz"
+    }
+  ],
+  "cases": [
+    {
+      "name": "directory-not-granted",
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/wasmtime-v49.0.1-aarch64-macos/wasmtime",
+        "serve",
+        "-Scli",
+        "--addr",
+        "127.0.0.1:0",
+        "--max-instance-reuse-count",
+        "1",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/app.wasm"
+      ],
+      "directoryPreopen": null,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/info",
+          "status": 200,
+          "json": {
+            "platform": "wasi",
+            "python": "3.14.0",
+            "requests_in_instance": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/info",
+          "status": 200,
+          "json": {
+            "platform": "wasi",
+            "python": "3.14.0",
+            "requests_in_instance": 1
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/quote",
+          "status": 200,
+          "json": {
+            "quantity": 2,
+            "sku": "widget",
+            "total_cents": 250
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/quote",
+          "status": 422,
+          "json": {
+            "error": "invalid_quote"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/quote",
+          "status": 400,
+          "json": {
+            "error": "invalid_json"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/quote",
+          "status": 413,
+          "json": {
+            "error": "body_size"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/missing",
+          "status": 404,
+          "json": {
+            "error": "not_found"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/data",
+          "status": 403,
+          "json": {
+            "errno": 44,
+            "error": "filesystem_unavailable",
+            "exception": "FileNotFoundError"
+          }
+        }
+      ],
+      "hostLog": [
+        "Serving HTTP on http://127.0.0.1:63829/"
+      ],
+      "hostExitCode": 0,
+      "passed": true
+    },
+    {
+      "name": "directory-granted",
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/wasmtime-v49.0.1-aarch64-macos/wasmtime",
+        "serve",
+        "-Scli",
+        "--addr",
+        "127.0.0.1:0",
+        "--max-instance-reuse-count",
+        "1",
+        "--dir",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/fixture::/data",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/app.wasm"
+      ],
+      "directoryPreopen": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/fixture::/data",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/info",
+          "status": 200,
+          "json": {
+            "platform": "wasi",
+            "python": "3.14.0",
+            "requests_in_instance": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/info",
+          "status": 200,
+          "json": {
+            "platform": "wasi",
+            "python": "3.14.0",
+            "requests_in_instance": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/data",
+          "status": 200,
+          "json": {
+            "message": "explicit directory capability"
+          }
+        }
+      ],
+      "hostLog": [
+        "Serving HTTP on http://127.0.0.1:63840/",
+        "Waiting for child tasks to exit, ctrl-c again to quit sooner..."
+      ],
+      "hostExitCode": 0,
+      "passed": true
+    }
+  ],
+  "sources": {
+    "docs/examples/wasi-edge/app.py": "449c0715369fb634a5aebf228cd63b849b1f3934a7b1afa6bd7a9d9b143da344",
+    "docs/examples/wasi-edge/toolchain.lock.json": "ed7f94f462264f2b857f8c6cc88901665b7de4827cf9257cd47f4be2add280ac",
+    "scripts/check-wasi-edge.py": "658f2e74f5d6426eaf026fefe4717286276ca026a418c24f8b2cf2f5b0395740"
+  },
+  "scope": "A Python WASI HTTP component on native Wasmtime, without application containers. The capability probe tests directory access only; it is not an audit of every imported host interface.",
+  "reportedToolVersions": [
+    "componentize-py 0.25.1",
+    "wasmtime 49.0.1 (46c23a87d 2026-09-24)",
+    "wasm-tools 1.259.0 (7fc33f279 2026-09-10)"
+  ],
+  "artifact": {
+    "filename": "app.wasm",
+    "bytes": 18511787,
+    "sha256": "186891bca2694690836eeef1c2ad7c4c21ef01e05fdaa483d6a090eec3e08f6d",
+    "encodingHeader": "0061736d0d000100",
+    "imports": [
+      "wasi:io/poll@0.2.9",
+      "wasi:clocks/monotonic-clock@0.2.9",
+      "wasi:clocks/wall-clock@0.2.9",
+      "wasi:random/random@0.2.9",
+      "wasi:io/error@0.2.9",
+      "wasi:io/streams@0.2.9",
+      "wasi:cli/stdout@0.2.9",
+      "wasi:cli/stderr@0.2.9",
+      "wasi:cli/stdin@0.2.9",
+      "wasi:http/types@0.2.9",
+      "wasi:http/outgoing-handler@0.2.9",
+      "wasi:cli/environment@0.2.9",
+      "wasi:cli/exit@0.2.9",
+      "wasi:cli/terminal-input@0.2.9",
+      "wasi:cli/terminal-output@0.2.9",
+      "wasi:cli/terminal-stdin@0.2.9",
+      "wasi:cli/terminal-stdout@0.2.9",
+      "wasi:cli/terminal-stderr@0.2.9",
+      "wasi:filesystem/types@0.2.9",
+      "wasi:filesystem/preopens@0.2.9",
+      "wasi:sockets/network@0.2.9",
+      "wasi:sockets/instance-network@0.2.9",
+      "wasi:sockets/udp@0.2.9",
+      "wasi:sockets/udp-create-socket@0.2.9",
+      "wasi:sockets/tcp@0.2.9",
+      "wasi:sockets/tcp-create-socket@0.2.9",
+      "wasi:sockets/ip-name-lookup@0.2.9"
+    ],
+    "exports": [
+      "exports",
+      "wasi:http/incoming-handler@0.2.0"
+    ],
+    "witSHA256": "4e7a70572d8ba5f989aca4356ce1fcfe8dce28e9e839f00c838b75df9a9b92cb",
+    "embeddedPython": "3.14.0",
+    "pythonVersionVerifiedBy": "GET /info on the native WASI host"
+  },
+  "fixture": {
+    "path": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/fixture/message.txt",
+    "sha256": "bc3e584caa7af9744fae14a3b7281ce2f45f425ae2d2906010d6ace1409c178b",
+    "createdBeforeHostLaunch": true,
+    "excludedFromPackage": true
+  },
+  "package": {
+    "filename": "wasi-edge-app.tar",
+    "bytes": 18524160,
+    "sha256": "f66277095f7443b6258438e5bfab2d38958d455f18c0e0e5a8958e5b330553d5",
+    "members": [
+      "app.wasm",
+      "manifest.json"
+    ]
+  },
+  "passed": true,
+  "commands": [
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/venv/bin/python",
+        "-m",
+        "pip",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--force-reinstall",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/componentize_py-0.25.1-cp39-abi3-macosx_11_0_arm64.whl"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 1.574
+    },
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/venv/bin/componentize-py",
+        "--version"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 1.222
+    },
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/wasmtime-v49.0.1-aarch64-macos/wasmtime",
+        "--version"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 0.032
+    },
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/wasm-tools-1.259.0-aarch64-macos/wasm-tools",
+        "--version"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 0.027
+    },
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/venv/bin/componentize-py",
+        "-d",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/componentize-py-2a53e46a0083619f2c85ac5f20abe4132cda4b88/wit",
+        "-w",
+        "wasi:http/proxy@0.2.0",
+        "componentize",
+        "app",
+        "-o",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/app.wasm"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 3.715
+    },
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/wasm-tools-1.259.0-aarch64-macos/wasm-tools",
+        "validate",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/app.wasm"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 0.023
+    },
+    {
+      "argv": [
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/wasm-tools-1.259.0-aarch64-macos/wasm-tools",
+        "component",
+        "wit",
+        "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge/.build/app.wasm"
+      ],
+      "cwd": "/Users/lewis.cowles/projects/personal/python-wasm-lab/docs/examples/wasi-edge",
+      "exitCode": 0,
+      "elapsedSeconds": 0.021
+    }
+  ]
+}
