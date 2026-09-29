@@ -14,6 +14,7 @@ A browser playground for comparing CPython releases and Pyodide, with editable e
 | Understand package and application support | [Packages and applications](docs/explanation/packages-and-applications.md) |
 | Rebuild, verify or deploy | [Documentation index](docs/README.md) |
 | Assess what has actually passed | [Validation reference](docs/reference/validation.md) |
+| Identify upstream sources and commits | [Source provenance appendix](appendix.md) |
 
 The documents follow the writing preferences in [AGENTS.md](AGENTS.md): each has one purpose, facts have one home, and explanations are separate from procedures and interface details.
 
@@ -27,6 +28,6 @@ The documents follow the writing preferences in [AGENTS.md](AGENTS.md): each has
 | `tests/`, `playwright.config.cjs` | Browser acceptance checks |
 | `docs/` | Current documentation and standalone validation evidence |
 | `research/`, `legacy/`, `transitional/`, `mid-modern/`, `initial-builder-staging/` | Preserved investigation history |
-| `cpython-modern/`, `pyenv/` and other source trees | Reference sources from the original investigation |
+| `appendix.md` | Provenance of upstream sources, with immutable commits and archive checksums |
 
-Historical research contains earlier assumptions and build attempts. Use the current documentation and the builder's locked recipes for repeatable work. Generated runtime bundles are covered by the [artifact contract](docs/reference/artifacts.md) and [publishing guide](docs/how-to/publish.md).
+Historical research contains earlier assumptions and build attempts. Downloaded sources and generated research output are ignored local files; their provenance is recorded in the appendix. Use the current documentation and the builder's locked recipes for repeatable work. Generated runtime bundles are covered by the [artifact contract](docs/reference/artifacts.md) and [publishing guide](docs/how-to/publish.md).
