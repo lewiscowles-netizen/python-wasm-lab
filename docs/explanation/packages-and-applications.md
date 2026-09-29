@@ -18,6 +18,8 @@ Those calls exercise the application in-process through its Asynchronous Server 
 
 [Datasette Lite](https://github.com/simonw/datasette-lite#how-this-works) adds a resident worker and a browser frontend. A comparable application needs navigation and request transport, asset handling, plugin assessment and an explicit state lifecycle. The lab displays response checks; it does not implement or validate that complete frontend. Its [execution lifecycle](architecture.md) is designed for isolated runs, so a resident application would need explicit state management.
 
+The [framework-playground design](framework-playgrounds.md) maps this pattern to Django, Flask and FastAPI and separates inbound requests from mocked outbound services. [Measured framework results](../reference/framework-support.md) identify the paths already exercised.
+
 ## Deployment follows the required capabilities
 
 Keeping dependencies local can remove startup downloads, but version pins alone neither vendor wheels nor prove offline operation. Remote wheels and datasets depend on browser fetch rules, including cross-origin resource sharing (CORS). Persistent data requires a storage integration and synchronization policy; virtual-file writes alone do not provide persistence. These are deployment decisions beyond selecting an installer.
