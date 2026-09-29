@@ -1,0 +1,13 @@
+*
+!Dockerfile
+!build.sh
+!patches
+!patches/**
+
+!configure.sh
+!compile.sh
+!smoke.mjs
+!python.mjs
+!manifest.py
+!entropy.js
+!notices.py

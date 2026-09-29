@@ -1,0 +1,5 @@
+builds
+docs
+*.log
+.git
+__pycache__

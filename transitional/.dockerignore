@@ -1,0 +1,5 @@
+builds
+dist
+configuration
+*.log
+__pycache__

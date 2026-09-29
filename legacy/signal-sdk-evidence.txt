@@ -1,0 +1,5 @@
+/emsdk/upstream/emscripten/src/library_signals.js:50:  sigprocmask: function() {
+/emsdk/upstream/emscripten/src/library_signals.js:52:    err('Calling stub instead of sigprocmask()');
+/emsdk/upstream/emscripten/src/library_signals.js:152:  sigpending: function(set) {
+/emsdk/upstream/emscripten/src/library_signals.js:177:  //sigtimedwait
+/emsdk/upstream/emscripten/src/library_signals.js:178:  //sigwaitinfo

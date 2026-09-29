@@ -1,0 +1,138 @@
+{
+  "2.7.18": {
+    "series": "2.7",
+    "version": "2.7.18",
+    "url": "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz",
+    "sha256": "b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43",
+    "sourceDefinition": "2.7.18",
+    "validation": "pending"
+  },
+  "3.0.1": {
+    "series": "3.0",
+    "version": "3.0.1",
+    "url": "https://www.python.org/ftp/python/3.0.1/Python-3.0.1.tgz",
+    "sha256": "7d5f2feae9035f1d3d9e6bb7f092dbf374d6bb4b25abd0d2d11f13bba1cb04de",
+    "sourceDefinition": "3.0.1",
+    "validation": "pending"
+  },
+  "3.1.5": {
+    "series": "3.1",
+    "version": "3.1.5",
+    "url": "https://www.python.org/ftp/python/3.1.5/Python-3.1.5.tgz",
+    "sha256": "d12dae6d06f52ef6bf1271db4d5b4d14b5dd39813e324314e72b648ef1bc0103",
+    "sourceDefinition": "3.1.5",
+    "validation": "pending"
+  },
+  "3.2.6": {
+    "series": "3.2",
+    "version": "3.2.6",
+    "url": "https://www.python.org/ftp/python/3.2.6/Python-3.2.6.tar.xz",
+    "sha256": "1d12b501819fd26afafbf8459be1aa279b56f032b4c15412de0a713ce0de7bdc",
+    "sourceDefinition": "3.2.6",
+    "validation": "pending"
+  },
+  "3.3.7": {
+    "series": "3.3",
+    "version": "3.3.7",
+    "url": "https://www.python.org/ftp/python/3.3.7/Python-3.3.7.tar.xz",
+    "sha256": "85f60c327501c36bc18c33370c14d472801e6af2f901dafbba056f61685429fe",
+    "sourceDefinition": "3.3.7",
+    "validation": "pending"
+  },
+  "3.4.10": {
+    "series": "3.4",
+    "version": "3.4.10",
+    "url": "https://www.python.org/ftp/python/3.4.10/Python-3.4.10.tar.xz",
+    "sha256": "d46a8f6fe91679e199c671b1b0a30aaf172d2acb5bcab25beb35f16c3d195b4e",
+    "sourceDefinition": "3.4.10",
+    "validation": "pending"
+  },
+  "3.5.10": {
+    "series": "3.5",
+    "version": "3.5.10",
+    "url": "https://www.python.org/ftp/python/3.5.10/Python-3.5.10.tar.xz",
+    "sha256": "0f0fa8685c1dc1f1dacb0b4e7779796b90aef99dc1fa4967a71b9da7b57d4a28",
+    "sourceDefinition": "3.5.10",
+    "validation": "pending"
+  },
+  "3.6.15": {
+    "series": "3.6",
+    "version": "3.6.15",
+    "url": "https://www.python.org/ftp/python/3.6.15/Python-3.6.15.tar.xz",
+    "sha256": "6e28d7cdd6dd513dd190e49bca3972e20fcf455090ccf2ef3f1a227614135d91",
+    "sourceDefinition": "3.6.15",
+    "validation": "pending"
+  },
+  "3.7.17": {
+    "series": "3.7",
+    "version": "3.7.17",
+    "url": "https://www.python.org/ftp/python/3.7.17/Python-3.7.17.tar.xz",
+    "sha256": "7911051ed0422fd54b8f59ffc030f7cf2ae30e0f61bda191800bb040dce4f9d2",
+    "sourceDefinition": "3.7.17",
+    "validation": "pending"
+  },
+  "3.8.20": {
+    "series": "3.8",
+    "version": "3.8.20",
+    "url": "https://www.python.org/ftp/python/3.8.20/Python-3.8.20.tar.xz",
+    "sha256": "6fb89a7124201c61125c0ab4cf7f6894df339a40c02833bfd28ab4d7691fafb4",
+    "sourceDefinition": "3.8.20",
+    "validation": "pending"
+  },
+  "3.9.25": {
+    "series": "3.9",
+    "version": "3.9.25",
+    "url": "https://www.python.org/ftp/python/3.9.25/Python-3.9.25.tar.xz",
+    "sha256": "00e07d7c0f2f0cc002432d1ee84d2a40dae404a99303e3f97701c10966c91834",
+    "sourceDefinition": "3.9.25",
+    "validation": "pending"
+  },
+  "3.10.21": {
+    "series": "3.10",
+    "version": "3.10.21",
+    "url": "https://www.python.org/ftp/python/3.10.21/Python-3.10.21.tar.xz",
+    "sha256": "a0da1e72132e950154eca0f6f47d5db828454700de20e5113667940d81e0db04",
+    "sourceDefinition": "3.10.21",
+    "validation": "pending"
+  },
+  "3.11.16": {
+    "series": "3.11",
+    "version": "3.11.16",
+    "url": "https://www.python.org/ftp/python/3.11.16/Python-3.11.16.tar.xz",
+    "sha256": "91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8",
+    "sourceDefinition": "3.11.16",
+    "validation": "pending"
+  },
+  "3.12.14": {
+    "series": "3.12",
+    "version": "3.12.14",
+    "url": "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tar.xz",
+    "sha256": "5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+    "sourceDefinition": "3.12.14",
+    "validation": "pending"
+  },
+  "3.13.15": {
+    "series": "3.13",
+    "version": "3.13.15",
+    "url": "https://www.python.org/ftp/python/3.13.15/Python-3.13.15.tar.xz",
+    "sha256": "1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76",
+    "sourceDefinition": "3.13.15",
+    "validation": "pending"
+  },
+  "3.14.7": {
+    "series": "3.14",
+    "version": "3.14.7",
+    "url": "https://www.python.org/ftp/python/3.14.7/Python-3.14.7.tar.xz",
+    "sha256": "3b48dac8fb59f62eaa67ac83c1eb12bda1b7a08406dd286e252c11a66be27f81",
+    "sourceDefinition": "3.14.7",
+    "validation": "pending"
+  },
+  "3.15.0rc2": {
+    "series": "3.15",
+    "version": "3.15.0rc2",
+    "url": "https://www.python.org/ftp/python/3.15.0/Python-3.15.0rc2.tar.xz",
+    "sha256": "8d93af5eaaaea5adfd41bd786a7ba3f03f2ad1ab57c6a65e0b963deab91d5ad7",
+    "sourceDefinition": "3.15.0rc2",
+    "validation": "pending"
+  }
+}
