@@ -8,12 +8,14 @@ A browser playground for comparing CPython releases and Pyodide, with editable e
 | --- | --- |
 | Start the playground | [Run the lab](docs/how-to/run-lab.md) |
 | Learn by trying examples | [Compare two Python interpreters](experiments/wasm/python/LAB-NOTES.md) |
+| Progress from first run to application integration | [Python WebAssembly learning path](docs/learning-path.md) |
 | Check versions and available modules | [Runtime compatibility reference](docs/reference/runtimes.md) |
 | Understand the controls and worker messages | [Playground interface](experiments/wasm/python/README.md) |
 | Choose between runtime approaches | [Runtime alternatives](docs/explanation/runtime-alternatives.md) |
 | Understand package and application support | [Packages and applications](docs/explanation/packages-and-applications.md) |
 | Bring your own project | [Project integration guide](docs/how-to/import-project.md) |
 | Run Django, Flask or FastAPI requests | [Framework probes](docs/how-to/probe-frameworks.md) and [browser-playground design](docs/explanation/framework-playgrounds.md) |
+| Call a real external service | [Service tutorial](docs/tutorials/external-service.md) and [intranet connection guide](docs/how-to/connect-service.md) |
 | Run inside a closed network | [Internal deployment](docs/how-to/deploy-offline.md) and [intranet debugging](docs/how-to/debug-intranet.md) |
 | Rebuild, verify or deploy | [Documentation index](docs/README.md) |
 | Assess what has actually passed | [Validation reference](docs/reference/validation.md) |
