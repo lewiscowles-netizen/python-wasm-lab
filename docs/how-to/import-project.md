@@ -11,7 +11,7 @@ Check the project's minimum Python version, standard-library imports, native ext
 | Pure Python modules and local data | Package the source and fixtures; call a function from a short harness |
 | Native extensions available in Pyodide | Use the matching Pyodide distribution and its packages |
 | Native extensions absent from the selected runtime | Port/rebuild the extension and interpreter profile first |
-| Web framework | Exercise its application in-process, following the [Datasette example](../../experiments/wasm/python/examples/datasette.py) |
+| Web framework | Exercise its application in-process, following the [framework probes](probe-frameworks.md) or [Datasette example](../../experiments/wasm/python/examples/datasette.py) |
 | Processes, sockets or persistent services | Replace that boundary with a browser-compatible adapter or retain an intranet service |
 
 See [package and application trade-offs](../explanation/packages-and-applications.md) before choosing between these paths.
