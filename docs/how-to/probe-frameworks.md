@@ -32,4 +32,6 @@ In the FastAPI source, the injected `service_client` uses HTTPX `MockTransport`.
 
 Pass this client into the application through its factory or dependency injection. A mock only affects calls that use that client; unrelated `requests`, socket or database calls are unchanged. Keep unknown destinations explicit failures so a missing fixture does not silently fall through to a real service.
 
+To make a real browser request instead, complete the [external-service tutorial](../tutorials/external-service.md), then adapt its callable client at the same application boundary.
+
 After the in-process checks pass, use the [browser-playground design](../explanation/framework-playgrounds.md) for links, forms and navigation. That step requires a resident worker and request bridge; these scripts alone do not install them.
