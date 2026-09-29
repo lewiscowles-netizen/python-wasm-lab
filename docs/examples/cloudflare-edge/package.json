@@ -1,0 +1,9 @@
+{
+  "name": "python-wasm-cloudflare-edge-lab",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "devDependencies": {
+    "wrangler": "4.143.1"
+  }
+}

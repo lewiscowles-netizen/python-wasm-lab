@@ -1,0 +1,692 @@
+{
+  "date": "2026-09-29",
+  "scope": "Local workerd HTTP checks and dry-run packaging; no cloud deployment or quota enforcement tested",
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "versions": {
+    "uv": "uv 0.12.13 (Homebrew 2026-09-10 aarch64-apple-darwin)",
+    "node": "v24.14.0",
+    "pywrangler": "pywrangler, version 1.17.5",
+    "workerd": "workerd 2026-09-26",
+    "wrangler": "4.143.1"
+  },
+  "runs": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "pywrangler",
+        "dev",
+        "--local",
+        "--ip",
+        "127.0.0.1",
+        "--port",
+        "8791",
+        "--inspector-port",
+        "9236"
+      ],
+      "requests": [
+        {
+          "path": "/",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "message": "Python in a workerd isolate",
+            "python": "3.14.2",
+            "platform": "emscripten",
+            "pyodide": "314.0.6",
+            "request_count": 1,
+            "binding": "local workerd binding"
+          }
+        },
+        {
+          "path": "/packages",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "versions": {
+              "snowballstemmer": "3.1.1",
+              "certifi": "2026.7.22"
+            },
+            "stems": [
+              "run",
+              "jump"
+            ],
+            "resource": {
+              "package": "certifi",
+              "resource": "cacert.pem",
+              "bytes": 240216,
+              "certificate_count": 121
+            }
+          }
+        },
+        {
+          "path": "/stem",
+          "method": "POST",
+          "status": 200,
+          "body": {
+            "words": [
+              "running",
+              "jumping"
+            ],
+            "stems": [
+              "run",
+              "jump"
+            ]
+          }
+        },
+        {
+          "path": "/stem",
+          "method": "POST",
+          "status": 400,
+          "body": {
+            "error": "words must be a list of strings"
+          }
+        },
+        {
+          "path": "/missing",
+          "method": "GET",
+          "status": 404,
+          "body": {
+            "error": "Not found"
+          }
+        },
+        {
+          "path": "/resources",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "thread": {
+              "type": "RuntimeError",
+              "message": "can't start new thread"
+            },
+            "file": {
+              "path": "/tmp/cloudflare-edge-probe.txt",
+              "existed_before": false,
+              "roundtrip": "temporary Wasm file"
+            }
+          }
+        },
+        {
+          "path": "/resources",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "thread": {
+              "type": "RuntimeError",
+              "message": "can't start new thread"
+            },
+            "file": {
+              "path": "/tmp/cloudflare-edge-probe.txt",
+              "existed_before": true,
+              "roundtrip": "temporary Wasm file"
+            }
+          }
+        },
+        {
+          "path": "/",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "message": "Python in a workerd isolate",
+            "python": "3.14.2",
+            "platform": "emscripten",
+            "pyodide": "314.0.6",
+            "request_count": 8,
+            "binding": "local workerd binding"
+          }
+        }
+      ],
+      "startup_seconds_local_observation": 5.375,
+      "log": "INFO     Passing command to npx wrangler: npx --yes wrangler dev --local --ip   \n         127.0.0.1 --port 8791 --inspector-port 9236                            \n\n \u26c5\ufe0f wrangler 4.143.1\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nYour Worker has access to the following bindings:\nBinding                                        Resource                  Mode\nenv.LAB_MESSAGE (\"local workerd binding\")      Environment Variable      local\n\nAttaching additional modules:\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Name               \u2502 Type \u2502 Size        \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Vendored Modules   \u2502      \u2502 1111.52 KiB \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Total (89 modules) \u2502      \u2502 1111.52 KiB \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u2394 Starting local server...\nWrangler detected this dev session is running in an AI agent.\nThe Local Explorer API is available at http://127.0.0.1:8791/cdn-cgi/local/explorer/api\nUseful routes:\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/workers - local Workers and bindings\n  POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/scheduled?worker=<name> - invoke a Worker's scheduled handler; cron is required (see the OpenAPI schema for the full request)\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/storage/kv/namespaces - KV namespaces\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/d1/database - D1 databases\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/r2/buckets - R2 buckets\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/workers/durable_objects/namespaces - Durable Object namespaces\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/workflows - Workflows\n  POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/observability/query - run a read-only SQL query (SELECT/WITH only) over captured request traces and console logs. Tables: spans, logs (read attributes via json(attributes)). Example:\n    curl -X POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/observability/query -H 'Content-Type: application/json' -d '{\"sql\":\"SELECT service, name, outcome, duration_ms FROM spans WHERE parent_id IS NULL LIMIT 20\"}'\n  POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/observability/clear - clear all captured traces and logs\nIf the routes above don't cover what you need, fetch the full OpenAPI schema (large - use only as a last resort):\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api - OpenAPI schema\n[wrangler:info] Ready on http://127.0.0.1:8791\n[wrangler:info] GET / 200 OK (2670ms)\n[wrangler:info] GET /packages 200 OK (58ms)\n[wrangler:info] POST /stem 200 OK (9ms)\n[wrangler:info] POST /stem 400 Bad Request (7ms)\n[wrangler:info] GET /missing 404 Not Found (3ms)\n[wrangler:info] GET /resources 200 OK (5ms)\n[wrangler:info] GET /resources 200 OK (4ms)\n[wrangler:info] GET / 200 OK (4ms)\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "pywrangler",
+        "dev",
+        "--local",
+        "--ip",
+        "127.0.0.1",
+        "--port",
+        "8791",
+        "--inspector-port",
+        "9236"
+      ],
+      "requests": [
+        {
+          "path": "/",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "message": "Python in a workerd isolate",
+            "python": "3.14.2",
+            "platform": "emscripten",
+            "pyodide": "314.0.6",
+            "request_count": 1,
+            "binding": "local workerd binding"
+          }
+        },
+        {
+          "path": "/resources",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "thread": {
+              "type": "RuntimeError",
+              "message": "can't start new thread"
+            },
+            "file": {
+              "path": "/tmp/cloudflare-edge-probe.txt",
+              "existed_before": false,
+              "roundtrip": "temporary Wasm file"
+            }
+          }
+        },
+        {
+          "path": "/",
+          "method": "GET",
+          "status": 200,
+          "body": {
+            "message": "Python in a workerd isolate",
+            "python": "3.14.2",
+            "platform": "emscripten",
+            "pyodide": "314.0.6",
+            "request_count": 3,
+            "binding": "local workerd binding"
+          }
+        }
+      ],
+      "startup_seconds_local_observation": 6.494,
+      "log": "INFO     Passing command to npx wrangler: npx --yes wrangler dev --local --ip   \n         127.0.0.1 --port 8791 --inspector-port 9236                            \n\n \u26c5\ufe0f wrangler 4.143.1\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nYour Worker has access to the following bindings:\nBinding                                        Resource                  Mode\nenv.LAB_MESSAGE (\"local workerd binding\")      Environment Variable      local\n\nAttaching additional modules:\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Name               \u2502 Type \u2502 Size        \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Vendored Modules   \u2502      \u2502 1111.52 KiB \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Total (89 modules) \u2502      \u2502 1111.52 KiB \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u2394 Starting local server...\nWrangler detected this dev session is running in an AI agent.\nThe Local Explorer API is available at http://127.0.0.1:8791/cdn-cgi/local/explorer/api\nUseful routes:\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/workers - local Workers and bindings\n  POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/scheduled?worker=<name> - invoke a Worker's scheduled handler; cron is required (see the OpenAPI schema for the full request)\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/storage/kv/namespaces - KV namespaces\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/d1/database - D1 databases\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/r2/buckets - R2 buckets\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/workers/durable_objects/namespaces - Durable Object namespaces\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api/workflows - Workflows\n  POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/observability/query - run a read-only SQL query (SELECT/WITH only) over captured request traces and console logs. Tables: spans, logs (read attributes via json(attributes)). Example:\n    curl -X POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/observability/query -H 'Content-Type: application/json' -d '{\"sql\":\"SELECT service, name, outcome, duration_ms FROM spans WHERE parent_id IS NULL LIMIT 20\"}'\n  POST http://127.0.0.1:8791/cdn-cgi/local/explorer/api/local/observability/clear - clear all captured traces and logs\nIf the routes above don't cover what you need, fetch the full OpenAPI schema (large - use only as a last resort):\n  GET http://127.0.0.1:8791/cdn-cgi/local/explorer/api - OpenAPI schema\n[wrangler:info] Ready on http://127.0.0.1:8791\n[wrangler:info] GET / 200 OK (2655ms)\n[wrangler:info] GET /resources 200 OK (9ms)\n[wrangler:info] GET / 200 OK (2ms)\n"
+    }
+  ],
+  "bundle": {
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "pywrangler",
+      "deploy",
+      "--dry-run",
+      "--outdir",
+      ".local/bundle"
+    ],
+    "exit_code": 0,
+    "log": "INFO     Passing command to npx wrangler: npx --yes wrangler deploy --dry-run   \n         --outdir .local/bundle                                                 \n\n \u26c5\ufe0f wrangler 4.143.1\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAttaching additional modules:\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Name               \u2502 Type \u2502 Size        \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Vendored Modules   \u2502      \u2502 1111.52 KiB \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Total (89 modules) \u2502      \u2502 1111.52 KiB \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nTotal Upload: 1114.45 KiB / gzip: 242.88 KiB\nYour Worker has access to the following bindings:\nBinding                                        Resource                  \nenv.LAB_MESSAGE (\"local workerd binding\")      Environment Variable      \n\n--dry-run: exiting now.\n",
+    "reported_upload": "Total Upload: 1114.45 KiB / gzip: 242.88 KiB",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 132,
+        "sha256": "d98458d08b812c20f61e1a402a3b2688cd2e08f61d790a1d2c95a3bf42b0c383"
+      },
+      {
+        "path": "entry.py",
+        "bytes": 2997,
+        "sha256": "55cfa0b00762942b1a79edc6924d805a32a8899bde822d1c8d4f474cf6757fb4"
+      },
+      {
+        "path": "python_modules/.synced",
+        "bytes": 6,
+        "sha256": "a15185d854666f88be51a0a77a0aef00a1ef0b5465c5f0f1ba074d3d00cf9d26"
+      },
+      {
+        "path": "python_modules/_cloudflare_compat_flags.pyi",
+        "bytes": 131,
+        "sha256": "c6f038185b579036caeab22fe06319ff8598a3efb8e5c3af3fb92e35c69e8459"
+      },
+      {
+        "path": "python_modules/_pyodide_entrypoint_helper.pyi",
+        "bytes": 264,
+        "sha256": "59b0d818941b36714814396b548787784ba453e1ee027df77bdc1286574b9325"
+      },
+      {
+        "path": "python_modules/_workers_sdk_entropy_import_context.py",
+        "bytes": 6838,
+        "sha256": "44d2509dd47de6f77c3ede3f23c706ff8267b870ac46ec1addcc07db7d2bdbfe"
+      },
+      {
+        "path": "python_modules/_workers_sdk_package_patches.py",
+        "bytes": 1868,
+        "sha256": "5dbb2e92bfa5dbf481591275684ad0edea06a38b2a0c51437c75926d6136597e"
+      },
+      {
+        "path": "python_modules/_workers_sdk_patch_loader.pth",
+        "bytes": 33,
+        "sha256": "9536373b73d71adbb4dea7682cf1a5aad4a9d112028472429db99c7a5a0398b6"
+      },
+      {
+        "path": "python_modules/_workers_sdk_patch_loader.py",
+        "bytes": 683,
+        "sha256": "4f2803722e658e0fcc00a7559620e290ebf4c4c586e037567849e39f6817dc24"
+      },
+      {
+        "path": "python_modules/asgi.py",
+        "bytes": 148,
+        "sha256": "91abb4905574643f8f5ec7fc4cd2575c6d5c09290b843f28d658e382f7a2f5b4"
+      },
+      {
+        "path": "python_modules/certifi/__init__.py",
+        "bytes": 94,
+        "sha256": "7a52e5f4205f9b3d12a31898ceaa7e3f6837d19cc230700bcae1a9d91d1486c1"
+      },
+      {
+        "path": "python_modules/certifi/__main__.py",
+        "bytes": 243,
+        "sha256": "c410688fdd394d45812d118034e71fee88ba7beddd30fe1c1281bd3b232cd758"
+      },
+      {
+        "path": "python_modules/certifi/cacert.pem",
+        "bytes": 240216,
+        "sha256": "9cc2a774b5198dcff14d9be1e66091f538975d867ce029a96bce15a55dfd730f"
+      },
+      {
+        "path": "python_modules/certifi/core.py",
+        "bytes": 3394,
+        "sha256": "5c55f2727746e697f7edac9e17c377d8752e0da7ecca191531b3b80403d61dad"
+      },
+      {
+        "path": "python_modules/certifi/py.typed",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/certifi/tests/__init__.py",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/certifi/tests/test_certify.py",
+        "bytes": 467,
+        "sha256": "7c179d1edf37f7e912b133663735fb46c6338d5d0e5f8915d11c3bc287d227b8"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/INSTALLER",
+        "bytes": 2,
+        "sha256": "e6184ce10e266134fdcfa401e8f1a95005bcd4f18d16b62b757323e2833fe9a9"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/METADATA",
+        "bytes": 2474,
+        "sha256": "ef5af1638fbb23676ac3c5777dfcfc2cd9c348fe4172ed5ba3d277655b248090"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/RECORD",
+        "bytes": 1127,
+        "sha256": "cff9d243744c96445494c29abee3d592d0a6955d5504f4fbe034dce7aaf38490"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/REQUESTED",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/WHEEL",
+        "bytes": 91,
+        "sha256": "2b6eb4118ce7cd7b09601406aa623c553c4476265836f0d9c16f5c061f7efcc0"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/licenses/LICENSE",
+        "bytes": 989,
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+      },
+      {
+        "path": "python_modules/certifi-2026.7.22.dist-info/top_level.txt",
+        "bytes": 8,
+        "sha256": "28cbb8bd409fb232eb90f6d235d81d7a44bea552730402453bffe723c345ebe5"
+      },
+      {
+        "path": "python_modules/pyvenv.cfg",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/snowballstemmer/__init__.py",
+        "bytes": 3437,
+        "sha256": "b7deb373e5cfeb67267dde276350bebfc4b35221949145806090706cec3f681a"
+      },
+      {
+        "path": "python_modules/snowballstemmer/among.py",
+        "bytes": 395,
+        "sha256": "4b8b17bf3f97d46a1a536c288defe193147b15bd8edb01bbd3f64c57b8b5e2af"
+      },
+      {
+        "path": "python_modules/snowballstemmer/arabic_stemmer.py",
+        "bytes": 29486,
+        "sha256": "c818ef417c954a0885ed2fef0c7a2d25925ad89847ddd67eb3e0587df90df59d"
+      },
+      {
+        "path": "python_modules/snowballstemmer/armenian_stemmer.py",
+        "bytes": 9287,
+        "sha256": "36cd1e1d7228703eecd053c22c2ddee4872be06c91a99b77dc5aa33dbf99d9e6"
+      },
+      {
+        "path": "python_modules/snowballstemmer/basestemmer.py",
+        "bytes": 7948,
+        "sha256": "e60fd08f93826b9c428f038ace77500a68ba594d504cd64b1501a6fab2becbc1"
+      },
+      {
+        "path": "python_modules/snowballstemmer/basque_stemmer.py",
+        "bytes": 18805,
+        "sha256": "37ebc30e041a9ac3c5f724c2b4ab6fbca3762994fb37677c80285852f4a2e0d8"
+      },
+      {
+        "path": "python_modules/snowballstemmer/catalan_stemmer.py",
+        "bytes": 22451,
+        "sha256": "f579a75c10a38560074b9362ef3859dda3edd17e0689406aaa51859007903581"
+      },
+      {
+        "path": "python_modules/snowballstemmer/czech_stemmer.py",
+        "bytes": 9983,
+        "sha256": "86f21cd6174875068f48eb7920e75173ba4a5645406899c396f0d5e5644d6739"
+      },
+      {
+        "path": "python_modules/snowballstemmer/danish_stemmer.py",
+        "bytes": 7073,
+        "sha256": "03100fecc5e24ca2ab756e2470c0c6ffb25e1cbbacff01e04ca1c91c3882306d"
+      },
+      {
+        "path": "python_modules/snowballstemmer/dutch_porter_stemmer.py",
+        "bytes": 12913,
+        "sha256": "4907e89a0578b44d2c0147772ea1774e6aa8ecd0a218ee7cba8fb6dc0fb67a06"
+      },
+      {
+        "path": "python_modules/snowballstemmer/dutch_stemmer.py",
+        "bytes": 37474,
+        "sha256": "349e3db58f84283eec6f87071b46d433eeae04ceca8918259cdc2c44f62e6c35"
+      },
+      {
+        "path": "python_modules/snowballstemmer/english_stemmer.py",
+        "bytes": 21408,
+        "sha256": "350d71588d33ce8e2dd5084efa48c50cbaec90bec9ac3f7e97623fd640856dea"
+      },
+      {
+        "path": "python_modules/snowballstemmer/esperanto_stemmer.py",
+        "bytes": 17181,
+        "sha256": "ab99603f1e55d9eecd265204c86aef296e6de8bb387cafde74aa2ba336bcd7b4"
+      },
+      {
+        "path": "python_modules/snowballstemmer/estonian_stemmer.py",
+        "bytes": 23805,
+        "sha256": "f885ce9633f7e823a4d6e4351be21c2a4a1257b41f8c3d9ff1863d61f4036f00"
+      },
+      {
+        "path": "python_modules/snowballstemmer/finnish_stemmer.py",
+        "bytes": 18697,
+        "sha256": "229e2632d754cd39f8d20715e38b683a840a9f0fce48c93063d79556f9ef68fb"
+      },
+      {
+        "path": "python_modules/snowballstemmer/french_stemmer.py",
+        "bytes": 31603,
+        "sha256": "9ccd70188e427475cfe4adcdd407bc4c03f3627b4542dfb9d4839831122d5214"
+      },
+      {
+        "path": "python_modules/snowballstemmer/german_stemmer.py",
+        "bytes": 13550,
+        "sha256": "c0b65d824d9ff6277a23e6e80605e96caced9f725d73678fe24061237f376fee"
+      },
+      {
+        "path": "python_modules/snowballstemmer/greek_stemmer.py",
+        "bytes": 62627,
+        "sha256": "c0a3bee5d15cef7b10a042cb7a217f7ca53bec3a89fab39d86a4fc9c52ec2020"
+      },
+      {
+        "path": "python_modules/snowballstemmer/hindi_stemmer.py",
+        "bytes": 7524,
+        "sha256": "3484dcbdd74c8253be1b53e263dad3de6858ab07e4315d0d35a1b79b4894f2b5"
+      },
+      {
+        "path": "python_modules/snowballstemmer/hungarian_stemmer.py",
+        "bytes": 11989,
+        "sha256": "601d83718b0e4d48cb0b1fd7ba89128c844a9853349773bec0d0be7d0c0cc581"
+      },
+      {
+        "path": "python_modules/snowballstemmer/indonesian_stemmer.py",
+        "bytes": 11094,
+        "sha256": "2d4771b8dff5265ebc49ca48d4b43d2c186b5fb59cde6f98b72325c11deaa738"
+      },
+      {
+        "path": "python_modules/snowballstemmer/irish_stemmer.py",
+        "bytes": 6304,
+        "sha256": "bf8d482787fa72874859f1d3f7ded0b39eb1a56752e870fc876c199ecd248cb3"
+      },
+      {
+        "path": "python_modules/snowballstemmer/italian_stemmer.py",
+        "bytes": 21650,
+        "sha256": "a8fcea14594afdb5d2c97c942a117e896e9f753767faeb80769fb0a828a8c838"
+      },
+      {
+        "path": "python_modules/snowballstemmer/lithuanian_stemmer.py",
+        "bytes": 12640,
+        "sha256": "ee1bf0a18b74dbffc941eee1772729cfbe3d60b1451f80c05faa8ccb54da967d"
+      },
+      {
+        "path": "python_modules/snowballstemmer/nepali_stemmer.py",
+        "bytes": 8301,
+        "sha256": "0e0b12b9e783596f43a87f81eb639d410efb419efd04426a6c25b23466c2fa80"
+      },
+      {
+        "path": "python_modules/snowballstemmer/norwegian_stemmer.py",
+        "bytes": 7563,
+        "sha256": "b87a7d8400b09dcf2b81d4dc64cf035897be074e8f6178a0d47a43938e82cacd"
+      },
+      {
+        "path": "python_modules/snowballstemmer/persian_stemmer.py",
+        "bytes": 13268,
+        "sha256": "6abde5e8042414cad8b60af020b806c679986b0bff28936ab4c43ecdf3f66586"
+      },
+      {
+        "path": "python_modules/snowballstemmer/polish_stemmer.py",
+        "bytes": 8512,
+        "sha256": "2fdc4f94e3c8018d1617861519d6774280f537f21f158540a4c68c0b7cd9a09f"
+      },
+      {
+        "path": "python_modules/snowballstemmer/porter_stemmer.py",
+        "bytes": 12728,
+        "sha256": "b7e27d0486805a9ce69be3362dc3f995b988c4d607de438df189c21e4482b8b0"
+      },
+      {
+        "path": "python_modules/snowballstemmer/portuguese_stemmer.py",
+        "bytes": 19412,
+        "sha256": "a643258d3c4e3347e35a8bdb7d2864a5c9194a8e6d815fce77c3c8201245ca04"
+      },
+      {
+        "path": "python_modules/snowballstemmer/romanian_stemmer.py",
+        "bytes": 18939,
+        "sha256": "d2e92930f4c6aa344e568e1827f5ffeaed71f44b761163ceb79a01e039be74d8"
+      },
+      {
+        "path": "python_modules/snowballstemmer/russian_stemmer.py",
+        "bytes": 13335,
+        "sha256": "502e03c7941acfe4d28bea3c7d1e356ba8d19ee728561cd0142315648779b6cd"
+      },
+      {
+        "path": "python_modules/snowballstemmer/serbian_stemmer.py",
+        "bytes": 103043,
+        "sha256": "5e7b7db45543bcaf011fa4fdad5a32a7d08e3ddfb9af38525d9d9efda7373031"
+      },
+      {
+        "path": "python_modules/snowballstemmer/sesotho_stemmer.py",
+        "bytes": 3614,
+        "sha256": "2f920803df570c347e3f121aaec63a5bec66f531487c17a19ec566d6c1e9a539"
+      },
+      {
+        "path": "python_modules/snowballstemmer/spanish_stemmer.py",
+        "bytes": 20209,
+        "sha256": "d6ff9ce6ef516103c1cb1f1996aa038bc865316159e76f21a9b82c90d621aba3"
+      },
+      {
+        "path": "python_modules/snowballstemmer/swedish_stemmer.py",
+        "bytes": 7127,
+        "sha256": "b1d9c429e6e7e9ca82a2ed230a4771ff5a6f35084817fc862b5af090166beb5b"
+      },
+      {
+        "path": "python_modules/snowballstemmer/tamil_stemmer.py",
+        "bytes": 28721,
+        "sha256": "08fb989839946518bba347b88dea433117d1ebdca7b35f02a6ef4c34dc92f5ab"
+      },
+      {
+        "path": "python_modules/snowballstemmer/turkish_stemmer.py",
+        "bytes": 55586,
+        "sha256": "567caf1a76293fda9708373325ca7c7bf872797a75c89b33e0ef604ad0fac965"
+      },
+      {
+        "path": "python_modules/snowballstemmer/yiddish_stemmer.py",
+        "bytes": 27006,
+        "sha256": "cf0884891894faf4d47867946c9e88def419bd29b81a08a7ef3d77dfa0f7db81"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/INSTALLER",
+        "bytes": 2,
+        "sha256": "e6184ce10e266134fdcfa401e8f1a95005bcd4f18d16b62b757323e2833fe9a9"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/METADATA",
+        "bytes": 7882,
+        "sha256": "6c06c375da8e0a963410b6af906e3d72acc337a5fde985944a4b74e24b10479a"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/RECORD",
+        "bytes": 4182,
+        "sha256": "d38f4191efd2d7a6be6d0b7dc26fa301164c8fc016b5614aa439ffe1dddbad68"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/REQUESTED",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/WHEEL",
+        "bytes": 91,
+        "sha256": "69e6228a0d35958183cc1812f07c565ce837b95eb51bd8a33acba9fa4f68d6c9"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/licenses/COPYING",
+        "bytes": 1630,
+        "sha256": "880802872ce34f313df826e96131b1b147dcfa09c76fc82129f25503a922a678"
+      },
+      {
+        "path": "python_modules/snowballstemmer-3.1.1.dist-info/top_level.txt",
+        "bytes": 16,
+        "sha256": "727be2d8abcff3db51bed4845eefea9761a4abdc063d90f59202e194365f32b0"
+      },
+      {
+        "path": "python_modules/workers/__init__.py",
+        "bytes": 1446,
+        "sha256": "7c3c5bcc3c2ca594238b96c9a0aa94ef2e45e758bdd9b608c3c747b11c8f6e25"
+      },
+      {
+        "path": "python_modules/workers/asgi.py",
+        "bytes": 17891,
+        "sha256": "f606250b2087c7bfffcdcae8a9dd95f080954820e457e932daa77803c4fdd35d"
+      },
+      {
+        "path": "python_modules/workers/blob.py",
+        "bytes": 4767,
+        "sha256": "a60824ff75f77c0661aec3f51dc4a0f887a9ba270d3d841d48780e31f4604a2e"
+      },
+      {
+        "path": "python_modules/workers/entrypoints.py",
+        "bytes": 12987,
+        "sha256": "07dc371cf68e5ebd4683a8c46cf515654798c5320a33f2e014c588b15e89ae49"
+      },
+      {
+        "path": "python_modules/workers/fetch.py",
+        "bytes": 1416,
+        "sha256": "1f02d22f93b847f5e1d0d3de96c963bb59d180ade108cfc275b8ce18c301df74"
+      },
+      {
+        "path": "python_modules/workers/formdata.py",
+        "bytes": 3025,
+        "sha256": "54c4efc11b7c94a774a60b94fe0943c8e34b22568e44409e74a4624a21019aff"
+      },
+      {
+        "path": "python_modules/workers/py.typed",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/workers/request.py",
+        "bytes": 5270,
+        "sha256": "2afb0c6e5bf91495d48f6cec91358a4882854b9405e06ecb6b9135282a0079c5"
+      },
+      {
+        "path": "python_modules/workers/response.py",
+        "bytes": 7128,
+        "sha256": "a87282adff519607d2ba3a68a6e7af4ad66a2b95507d9ddfa79ea723931adb80"
+      },
+      {
+        "path": "python_modules/workers/rpc.py",
+        "bytes": 14182,
+        "sha256": "ea2e4e8b9bcc284edccf4c2786218fa049b684fad114e2d41acb4b00bbd5b55d"
+      },
+      {
+        "path": "python_modules/workers/types.py",
+        "bytes": 1468,
+        "sha256": "127a8fef1f90c91cf449d8a74db296ccedfb48e54f7ca8a8a36b551e6403349c"
+      },
+      {
+        "path": "python_modules/workers/utils.py",
+        "bytes": 9708,
+        "sha256": "722d886d6f970e67673a28d5cfe3706c72ed301e643e954b18574003a5b5c382"
+      },
+      {
+        "path": "python_modules/workers/workflows.js",
+        "bytes": 2898,
+        "sha256": "79122b38dde2e597646cbcc9989a5b78921f1ce46b3fb51f625edc15473b22a1"
+      },
+      {
+        "path": "python_modules/workers/workflows.py",
+        "bytes": 270,
+        "sha256": "9379fdf416da56d2400369165a51b72da83f724aea893ac785285631d09803bf"
+      },
+      {
+        "path": "python_modules/workers/wsgi.py",
+        "bytes": 13426,
+        "sha256": "64738dbf226a764a1085befaefa8f69c8aee47a1a7ac22ac33458315eb33e97f"
+      },
+      {
+        "path": "python_modules/workers_runtime_sdk-1.9.1.dist-info/INSTALLER",
+        "bytes": 2,
+        "sha256": "e6184ce10e266134fdcfa401e8f1a95005bcd4f18d16b62b757323e2833fe9a9"
+      },
+      {
+        "path": "python_modules/workers_runtime_sdk-1.9.1.dist-info/METADATA",
+        "bytes": 521,
+        "sha256": "10ce30260b461ff723dacd01c9381ceb93e11f82c2f1cd21c962061dabe40eb7"
+      },
+      {
+        "path": "python_modules/workers_runtime_sdk-1.9.1.dist-info/RECORD",
+        "bytes": 2138,
+        "sha256": "286610f12d002ef1c6a86da76366af2863c3fff162bb14c18f705cb541ef0a29"
+      },
+      {
+        "path": "python_modules/workers_runtime_sdk-1.9.1.dist-info/REQUESTED",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "python_modules/workers_runtime_sdk-1.9.1.dist-info/WHEEL",
+        "bytes": 87,
+        "sha256": "5b77e4a649bbfb07fdbc123967eeecd1e5a478cfaca6eefc23c35e6fdf037848"
+      }
+    ]
+  },
+  "source_sha256": {
+    "docs/examples/cloudflare-edge/src/entry.py": "55cfa0b00762942b1a79edc6924d805a32a8899bde822d1c8d4f474cf6757fb4",
+    "docs/examples/cloudflare-edge/wrangler.toml": "671e3fdec68368c350c797a9c8a329c5a54e0fca5c5e84a16c6e6b67f528dc83",
+    "docs/examples/cloudflare-edge/pyproject.toml": "b9149419c1b38e1bda1eef1f54634eba609ead2e4087739f0f95e4f5eb48dadd",
+    "docs/examples/cloudflare-edge/pylock.toml": "e94320b17ab1a5301f8b698a59dd11b3a3f0a8e02ee873ec7fb89e56f709ede9",
+    "docs/examples/cloudflare-edge/uv.lock": "da692e663b17f93415086128667d68566b23c992d35067dbf60af0f0ba04416c",
+    "docs/examples/cloudflare-edge/package.json": "0a0dce8b5a607b88bfcb0c0a61a0e95437a5818c3dba8428322bcc1325dfcc44",
+    "docs/examples/cloudflare-edge/yarn.lock": "b2ebef7b66bbc21acc8062534553d47acddb94e2974fd28cba461f79b7fc9c04",
+    "scripts/check-cloudflare-edge.py": "71cbbd4882ede3dc961020eab56148004aba3a08351c6cbd3105f810cc3333e6"
+  },
+  "passed": true
+}

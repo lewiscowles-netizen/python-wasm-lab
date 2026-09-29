@@ -1,0 +1,11 @@
+.venv*/
+.wrangler/
+.pyodide*/
+node_modules/
+python_modules/
+__pycache__/
+*.pyc
+.dev.vars*
+.env*
+bundled/
+.local/

@@ -1,0 +1,8 @@
+name = "python-wasm-cloudflare-edge-lab"
+main = "src/entry.py"
+compatibility_date = "2026-09-26"
+compatibility_flags = ["python_workers"]
+send_metrics = false
+
+[vars]
+LAB_MESSAGE = "local workerd binding"
