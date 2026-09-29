@@ -12,7 +12,11 @@ All dates are 2026-09-29. These are distinct suites, not counts to add together.
 | Standalone repository, local-only suite | 27 | 5 | Earlier console result; superseded by the full run above |
 | Original website integration, full suite | 31 | 0 | [Historical ledger](../../experiments/wasm/python/browser-evidence.json) |
 
-The standalone full run uses Playwright 1.62.1 with Chromium and takes 52.5 seconds. Its extra test checks selector grouping, numeric order, the stable default and Pyodide package controls. The report identifies source commit `c4e3cc1`, the executed command and every test result. Its local runtime file hashes match the imported bundles; all manifest-declared files were verified after the run.
+The standalone full run uses Playwright 1.62.1 with Chromium and takes 52.5 seconds. Its extra test checks selector grouping, numeric order, the stable default and Pyodide package controls. The report identifies the original source commit, executed command and every test result. Its local runtime file hashes match the imported bundles; all manifest-declared files were verified after the run.
+
+## History cleanup
+
+The [2026-09-29 cleanup record](../evidence/history-cleanup-2026-09-29.json) maps original commits to their rewritten equivalents after removing the downloaded and generated material identified in the [provenance appendix](../../appendix.md). The original browser report retains its original commit identity. Its application source and runtime hashes still match after cleanup; this verification does not represent a new browser test run. The cleanup record also identifies the unchanged tip tree and checks that local files and dependency checkout heads were preserved.
 
 ## Checks by layer
 
