@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-29",
+  "sourceCommit": "25d952b06ea246777101d6b81e768efeff70c0e0",
+  "sourceSha256": {
+    "tests/python-wasm.spec.js": "f495461dbb9d1efaf078c879609ba08924d979faf322f34fbbb4ea1453023791",
+    "playwright.config.cjs": "23085e750b8d452f288b1a23af88f82b5510fb042562001b75c720c138b90108",
+    "serve.py": "82b64263cee3bdfebf1d7952d87e77516d2083334e1fde071b3c1667b9b0a8d4",
+    "experiments/wasm/python/index.html": "ef903f520a97c29adcba5f72cfdf3931b09adcd5fc868f4567cfdc66903c0046",
+    "experiments/wasm/python/playground.mjs": "f320a50169703c33758cb20d486b4a572b8c16ec5d1d1594f7281cfe4741df62",
+    "experiments/wasm/python/worker.mjs": "4bed887bac7dac75dce35ee5d428e0bbcfea44d604b6be196e46b0f8786652f5",
+    "experiments/wasm/python/runtimes.json": "a878455d3bba140fb24f0024a3aab9e3549bbc599773055ea51fc62d9169f31b",
+    "experiments/wasm/python/examples/datasette.py": "10a0219f75926b765d512afc6b437c6d25279ca3d3e92810181fd90513e4b666",
+    "experiments/wasm/python/examples/datasette-requirements.txt": "cefca4079776860ce3811cf26eb2c1b4543cfb9349cb8f31d233033d0ba0c59c",
+    "experiments/wasm/python/examples/python-info.py": "68633d1cf0561aec3ff07731cd4ec2f083f6bc894ead8a3277fcdd4da0429b01"
+  },
+  "playwrightVersion": "1.62.1",
+  "browser": "Chromium 151.0.7922.34",
+  "method": {
+    "freshBrowserContexts": true,
+    "serviceWorkers": "block",
+    "policy": "Allow the configured loopback origin and abort other routed HTTP requests",
+    "redirectsObserved": false,
+    "networkEnforcement": "Browser request interception; no operating-system firewall changes"
+  },
+  "localCPython": {
+    "startedAt": "2026-09-29T15:46:18.161Z",
+    "allowedOrigin": "http://127.0.0.1:8129",
+    "observations": [
+      {
+        "phase": "CPython 2.7.18",
+        "status": "Finished with exit code 0.",
+        "reportedVersion": "2.7.18 (default, Apr 19 2020, 00:00:00) [GCC Clang 12.0.0 (/b/s/w/ir/cache/git/chromium.googlesource.com-external-githu \u00b7 emscripten",
+        "stdout": "VERSION 2.7.18\nPLATFORM emscripten\nWASM_STDOUT 285\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n",
+        "blockedRequests": []
+      },
+      {
+        "phase": "CPython 3.14.7",
+        "status": "Finished with exit code 0.",
+        "reportedVersion": "3.14.7 (main, Sep 15 2026, 00:00:00) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8 \u00b7 emscripten",
+        "stdout": "VERSION 3.14.7\nPLATFORM emscripten\nWASM_STDOUT 285\nJSON 42\nRegex aaa\nMath 9.0\nFile wasm\n",
+        "stderr": "WASM_STDERR\n",
+        "blockedRequests": []
+      }
+    ],
+    "requestSummary": [
+      {
+        "runtime": "2.7.18",
+        "requests": 11,
+        "responseStatuses": [
+          200
+        ]
+      },
+      {
+        "runtime": "3.14.7",
+        "requests": 11,
+        "responseStatuses": [
+          200
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "version": "2.7.18",
+        "files": {
+          "python.mjs": "38d3cde5405e3812a6c407c5142e04633b581c730dd6ec26da40a7f31f62b975",
+          "python.wasm": "dcad2db536078276c70b1a7d30d446ff29825abb30f60cd1b96cd0d1b79f75f1",
+          "python.data": "89e3c8e4ed1c001b438ed6c2d4cd7853067e20171635fb185dec1ce94d825655"
+        }
+      },
+      {
+        "version": "3.14.7",
+        "files": {
+          "python.mjs": "27b0f63754f49d525b2b712680edf3303c28c779f168395eda6f7321f61ee50c",
+          "python.wasm": "cda1f57c2146c2418d7cc62ad0dd936e10d1cf8f579ead22e9dee35ed6f42ca5",
+          "python.data": "baa7a2c940bf9481e8c6ad8d656fe4bb1ca5abc67eb8cccf6c8cf81286cc2599"
+        }
+      }
+    ]
+  },
+  "externalLoaderNegativeControl": {
+    "phase": "Pyodide 314.0.7",
+    "status": "Execution failed.",
+    "reportedVersion": "Waiting for Python to report its version\u2026",
+    "stdout": "",
+    "stderr": "Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs\n",
+    "blockedRequests": [
+      {
+        "phase": "Pyodide 314.0.7",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs",
+        "origin": "https://cdn.jsdelivr.net",
+        "method": "GET",
+        "resourceType": "script",
+        "action": "abort"
+      }
+    ]
+  },
+  "selfHostedPyodide": {
+    "checkedAt": "2026-09-29T15:49:39.509Z",
+    "distribution": "314.0.7",
+    "allowedOrigin": "http://127.0.0.1:59303",
+    "workerProtocol": {
+      "type": "run",
+      "options": {
+        "autoPackages": false,
+        "micropip": true,
+        "packages": []
+      }
+    },
+    "reportedVersion": {
+      "type": "version",
+      "version": "3.14.2 (main, Sep 14 2026, 03:03:51) [Clang 23.0.0git (https:/github.com/llvm/llvm-project e5927fecf8a6ce89e1a4eac5b8",
+      "platform": "emscripten"
+    },
+    "completion": {
+      "type": "done",
+      "exitCode": 0
+    },
+    "result": {
+      "answer": 42,
+      "projectModule": "/app/local_project/__init__.py",
+      "data": "40\n",
+      "wheelGreeting": "local-wheel-installed",
+      "wheelVersion": "1.0.0",
+      "wheelModule": "/lib/python3.14/site-packages/local_fixture/__init__.py",
+      "micropip": "0.11.1",
+      "workerLocation": "http://127.0.0.1:59303/worker.mjs",
+      "wheelURL": "http://127.0.0.1:59303/wheels/local_fixture-1.0.0-py3-none-any.whl",
+      "archiveURL": "http://127.0.0.1:59303/fixtures/project.zip"
+    },
+    "requestPaths": [
+      "/",
+      "/fixtures/project.zip",
+      "/runtime/micropip-0.11.1-py3-none-any.whl",
+      "/runtime/pyodide-lock.json",
+      "/runtime/pyodide.asm.mjs",
+      "/runtime/pyodide.asm.wasm",
+      "/runtime/pyodide.mjs",
+      "/runtime/python_stdlib.zip",
+      "/wheels/local_fixture-1.0.0-py3-none-any.whl",
+      "/worker.mjs"
+    ],
+    "httpStatuses": [
+      200
+    ],
+    "externalRequests": [],
+    "failedRequests": [],
+    "stderr": "",
+    "workerSourceSha256": "4bed887bac7dac75dce35ee5d428e0bbcfea44d604b6be196e46b0f8786652f5",
+    "bootstrap": "import json, sys\nfrom pathlib import Path\nfrom js import URL, location\nfrom pyodide.http import pyfetch\nimport micropip\n\narchive_url = str(URL.new('./fixtures/project.zip', location.href).href)\nresponse = await pyfetch(archive_url)\nassert response.ok\nawait response.unpack_archive(format='zip', extract_dir='/app')\nsys.path.insert(0, '/app')\nimport local_project\nassert local_project.answer() == 42\nassert Path('/app/local_project/data/value.txt').read_text() == '40\\n'\n\nwheel_name = 'local_fixture-1.0.0-py3-none-any.whl'\nwheel_url = str(URL.new('./wheels/' + wheel_name, location.href).href)\nawait micropip.install([wheel_url], deps=False)\nimport local_fixture\nfrom importlib.metadata import version\nassert local_fixture.greeting() == 'local-wheel-installed'\nassert version('local-fixture') == '1.0.0'\nprint('__LOCAL_FIXTURE_RESULT__' + json.dumps({'answer': local_project.answer(), 'projectModule': local_project.__file__, 'data': Path('/app/local_project/data/value.txt').read_text(), 'wheelGreeting': local_fixture.greeting(), 'wheelVersion': version('local-fixture'), 'wheelModule': local_fixture.__file__, 'micropip': version('micropip'), 'workerLocation': str(location.href), 'wheelURL': wheel_url, 'archiveURL': archive_url}))\n",
+    "projectFixtureSources": {
+      "local_project/__init__.py": "from .arithmetic import answer\n",
+      "local_project/arithmetic.py": "from importlib.resources import files\ndef answer():\n    return int(files(\"local_project\").joinpath(\"data/value.txt\").read_text()) + 2\n",
+      "local_project/data/value.txt": "40\n"
+    },
+    "assets": [
+      {
+        "path": "runtime/pyodide-lock.json",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide-lock.json",
+        "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+        "bytes": 119077,
+        "lockHash": null
+      },
+      {
+        "path": "runtime/pyodide.mjs",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs",
+        "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+        "bytes": 17931,
+        "lockHash": null
+      },
+      {
+        "path": "runtime/pyodide.asm.mjs",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.asm.mjs",
+        "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+        "bytes": 1250344,
+        "lockHash": null
+      },
+      {
+        "path": "runtime/pyodide.asm.wasm",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.asm.wasm",
+        "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+        "bytes": 9598218,
+        "lockHash": null
+      },
+      {
+        "path": "runtime/python_stdlib.zip",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/python_stdlib.zip",
+        "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+        "bytes": 2545637,
+        "lockHash": null
+      },
+      {
+        "path": "runtime/micropip-0.11.1-py3-none-any.whl",
+        "url": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/micropip-0.11.1-py3-none-any.whl",
+        "sha256": "e2d52886594fd4cd0d0847110a1c34ae0134d3a970eb4496d3b5eb31ee2d8af6",
+        "bytes": 115486,
+        "lockHash": "e2d52886594fd4cd0d0847110a1c34ae0134d3a970eb4496d3b5eb31ee2d8af6"
+      }
+    ],
+    "fixtures": [
+      {
+        "path": "wheels/local_fixture-1.0.0-py3-none-any.whl",
+        "sha256": "edc7c7dbc2d6f164295fbb5985280d507173fe8469fec3ee14c0767fde604825",
+        "bytes": 1051,
+        "source": "Synthetic fixture created for this isolated test"
+      },
+      {
+        "path": "fixtures/project.zip",
+        "sha256": "d4185a9bf8e679aaf090c76d7764f80255dcd3ede0284c62a23c6b9ae2c977e2",
+        "bytes": 557,
+        "source": "Synthetic fixture created for this isolated test"
+      }
+    ],
+    "coreHashMeaning": "Observed download hashes; the distribution lock does not authenticate the core files. Micropip wheel hash matched its lock entry.",
+    "scope": "Synthetic project and dependency-free wheel using the actual worker; no full application, native wheel or persistence acceptance."
+  },
+  "documentedCommand": {
+    "path": "docs/how-to/verify-no-egress.md",
+    "shellBlockSha256": "540f44c2ca42eee3b5b6f8acd75d2115eea00c6243e16e86f75c7181dc10ca1a",
+    "executedVerbatim": true,
+    "runtime": "cpython-3.14.7",
+    "stdout": "INTRANET_OK 3.14.7 42\n\nNo external HTTP requests observed in this run.\n",
+    "exitCode": 0,
+    "redirectBehavior": "The documented diagnostic uses fetch with maxRedirects=0 and rejects redirect responses before fulfilling them.",
+    "redirectControl": {
+      "directAllowedRequest": "passed",
+      "crossOriginRedirect": "blocked; destination received zero requests",
+      "sameOriginRedirect": "blocked",
+      "guard": "Exact route handler extracted from the guide",
+      "playwrightVersion": "1.62.1"
+    }
+  },
+  "limits": [
+    "Only the named runtimes and fixtures were checked, not all 17 builds or complete Datasette.",
+    "HTTP request checks do not enforce WebSocket policy or audit all browser traffic.",
+    "No operating-system network isolation, enterprise authentication, custom CSP or offline interpreter build was tested.",
+    "The default catalog still uses external Pyodide; self-hosting was tested in an isolated temporary deployment."
+  ]
+}
